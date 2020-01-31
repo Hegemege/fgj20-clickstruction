@@ -5,6 +5,9 @@ using UnityUtilities;
 
 public class GameManager : GenericManager<GameManager>, ILoadedManager
 {
+    public AnimationCurve PartRepairPositionAnimation;
+    public AnimationCurve PartRepairRotationAnimation;
+
     public void Initialize()
     {
         if (!InitializeSingleton(this)) return;
