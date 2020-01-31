@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityUtilities;
 
 public class FixerController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class FixerController : MonoBehaviour
         transform.Translate(velocity * dt);
     }
 
+    // Input System Events
     public void OnMovement(InputAction.CallbackContext ctx)
     {
         _inputDirection = ctx.ReadValue<Vector2>();
@@ -35,6 +37,24 @@ public class FixerController : MonoBehaviour
 
     public void OnRepair(InputAction.CallbackContext ctx)
     {
-        Debug.Log("OnRepair");
+        switch (ctx.phase)
+        {
+            case InputActionPhase.Started:
+                OnStartRepair();
+                break;
+            case InputActionPhase.Canceled:
+                OnEndRepair();
+                break;
+        }
+    }
+
+    private void OnStartRepair()
+    {
+        // Find close-by destructible and start repairing it
+    }
+
+    private void OnEndRepair()
+    {
+
     }
 }
