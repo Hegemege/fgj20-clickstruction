@@ -7,6 +7,10 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
     [HideInInspector]
     public Vector3 TargetLocation;
     public float MovementSpeed = 15f;
+    public float SwervingSpeed = 2.5f;
+    public float SwervingAngle = 40f;
+
+    private float _swervingTimer;
 
     public float SpawnDistanceFromOrigin;
 
@@ -25,11 +29,22 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
         _direction = direction;
 
         transform.position = -_direction * SpawnDistanceFromOrigin;
+
+        _swervingTimer = 0f;
     }
 
     public void Reset()
     {
+        gameObject.SetActive(false);
+    }
 
+    void Update()
+    {
+        // If the trex has ran too far, return to pool
+        if (Vector3.Distance(transform.position, Vector3.zero) > SpawnDistanceFromOrigin * 1.5f)
+        {
+            Reset();
+        }
     }
 
     void FixedUpdate()
@@ -38,8 +53,14 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
 
         var velocity = _direction * MovementSpeed;
 
+        // Add swerving
+        _swervingTimer += dt;
+        var swervePhase = Mathf.Sin(_swervingTimer * SwervingSpeed);
+        var swerveRotation = Quaternion.AngleAxis(swervePhase * SwervingAngle, Vector3.up);
+        velocity = swerveRotation * velocity;
+
         // Turn the object to always point forward
-        ModelRoot.transform.LookAt(transform.position + _direction, Vector3.up);
+        ModelRoot.transform.LookAt(transform.position + velocity.normalized, Vector3.up);
 
         transform.Translate(velocity * dt);
     }
@@ -48,7 +69,6 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
     {
         if (!other.CompareTag("DestructibleStaticTrigger")) return;
 
-        Debug.Log("Kill " + other);
         var destructible = other.GetComponentInParent<Destructible>();
         destructible.Destruct();
     }
