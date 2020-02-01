@@ -10,14 +10,21 @@ public class GameUICanvasController : MonoBehaviour
     void Start()
     {
         GameManager.Instance.UIController = this;
-
-        // TEMP
-        GameManager.Instance.StartMatch();
     }
 
     public void RefreshBars()
     {
+        RefreshCoinBar();
+        RefreshManaBar();
+    }
+
+    public void RefreshCoinBar()
+    {
         CoinBar.SetAmount(GameManager.Instance.Coins, GameManager.Instance.CoinMax);
+    }
+
+    public void RefreshManaBar()
+    {
         ManaBar.SetAmount(GameManager.Instance.Mana, GameManager.Instance.ManaMax);
     }
 }

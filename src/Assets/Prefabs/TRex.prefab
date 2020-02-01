@@ -151,8 +151,6 @@ Transform:
   - {fileID: 6468708223679868564}
   - {fileID: 2028872903675844426}
   - {fileID: 4520988939145443707}
-  - {fileID: 6834182143536774458}
-  - {fileID: 3319469334768452922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -169,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetLocation: {x: 0, y: 0, z: 0}
-  MovementSpeed: 15
+  MovementSpeed: 12
   SwervingSpeed: 2.1
   SwervingAngle: 10
   SpawnDistanceFromOrigin: 50
@@ -220,6 +218,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4473427266601723467}
+  - {fileID: 6834182143536774458}
+  - {fileID: 3319469334768452922}
   m_Father: {fileID: 8545026105068790997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,8 +252,8 @@ Transform:
   m_LocalPosition: {x: -0.78, y: 0, z: 2.0299997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8545026105068790997}
-  m_RootOrder: 3
+  m_Father: {fileID: 6468708223679868564}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!199 &6446976290951271812
 ParticleSystemRenderer:
@@ -5064,8 +5064,8 @@ Transform:
   m_LocalPosition: {x: 0.79, y: 0, z: 2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8545026105068790997}
-  m_RootOrder: 4
+  m_Father: {fileID: 6468708223679868564}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!199 &8835764596695074452
 ParticleSystemRenderer:

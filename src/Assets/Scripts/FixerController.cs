@@ -19,6 +19,11 @@ public class FixerController : MonoBehaviour
     private Vector2 _inputDirection;
     private Destructible _currentRepairTarget;
 
+    public Transform ModelRoot;
+
+    private Quaternion _targetModelRotation;
+    public float RotationSmoothing;
+
     // Props
     public float MovementSpeed
     {
@@ -63,7 +68,17 @@ public class FixerController : MonoBehaviour
             return;
         }
 
+
         var velocity = new Vector3(_inputDirection.x, 0f, _inputDirection.y) * MovementSpeed;
+
+        // Turn the object to always point forward
+        // Smoothed
+        if (velocity.magnitude > 0f)
+        {
+            _targetModelRotation = Quaternion.LookRotation(velocity.normalized, Vector3.up);
+        }
+
+        ModelRoot.rotation = Quaternion.Slerp(ModelRoot.rotation, _targetModelRotation, RotationSmoothing);
 
         transform.Translate(velocity * dt);
     }
