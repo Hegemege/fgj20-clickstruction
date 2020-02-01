@@ -28,10 +28,12 @@ public class Destructible : MonoBehaviour
 
     void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.M))
         {
             Destruct();
         }
+#endif
     }
 
     public void Destruct()

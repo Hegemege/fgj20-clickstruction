@@ -42,6 +42,16 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
     public void Update()
     {
+        // TEMP
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Coins = Mathf.Clamp(Coins + 10, 0f, CoinMax);
+            Mana = Mathf.Clamp(Mana + 10, 0f, ManaMax);
+            UIController.RefreshBars();
+        }
+#endif
+
         var dt = Time.deltaTime;
         var scene = SceneManager.GetActiveScene();
         if (scene.name == "main" && State != GameState.Match && State != GameState.VictoryScreen)
