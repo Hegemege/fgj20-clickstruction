@@ -15,6 +15,8 @@ public class Destructible : MonoBehaviour
     private List<DestructiblePart> DestructibleParts;
     private Coroutine _repairCoroutine;
 
+    public int FixRewardCoins = 8;
+
     void Awake()
     {
         DestructibleParts = GetComponentsInChildren<DestructiblePart>().ToList();
@@ -103,5 +105,23 @@ public class Destructible : MonoBehaviour
         {
             part.Reset();
         }
+
+        // Spawn coin collectibles
+        for (var i = 0; i < FixRewardCoins; i++)
+        {
+            var coin = PoolManager.Instance.CoinCollectiblePool.GetPooledObject();
+
+            // Move coin slightly up
+            coin.gameObject.transform.position = transform.position + Vector3.up * 1.5f;
+
+            coin.component.Initialize();
+
+            // Add random force
+            var randomDirection = Random.onUnitSphere;
+            randomDirection.y = Mathf.Abs(randomDirection.y) / 2f;
+
+            coin.component.RigidBody.AddForce(randomDirection * 7.5f, ForceMode.Impulse);
+        }
+
     }
 }
