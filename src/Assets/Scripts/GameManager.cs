@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityUtilities;
+using UnityEngine.UI.Extensions;
+using UnityEngine.UI;
 
 public class GameManager : GenericManager<GameManager>, ILoadedManager
 {
@@ -32,10 +34,15 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     private float _refreshManaBarTimer;
 
     public Texture2D CursorImage;
+    public Canvas CursorTrailCanvas;
+    private CanvasScaler _trailCanvasScaler;
+    public UILineRenderer CursorTrail;
 
     void Awake()
     {
         Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
+
+        _trailCanvasScaler = CursorTrailCanvas.GetComponent<CanvasScaler>();
     }
 
     public void Initialize()
@@ -77,6 +84,24 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
                 _refreshManaBarTimer = 0f;
                 UIController.RefreshManaBar();
             }
+
+            CursorTrail.enabled = true;
+            for (var i = 1; i < CursorTrail.Points.Length; i++)
+            {
+                CursorTrail.Points[i - 1] = CursorTrail.Points[i];
+            }
+
+            var xt = Mathf.Clamp01(Input.mousePosition.x / Screen.width);
+            var yt = Mathf.Clamp01(Input.mousePosition.y / Screen.height);
+
+            var pos = new Vector2(Input.mousePosition.x * _trailCanvasScaler.referenceResolution.x / Screen.width, Input.mousePosition.y * _trailCanvasScaler.referenceResolution.y / Screen.height);
+
+            CursorTrail.Points[CursorTrail.Points.Length - 1] = pos;
+            CursorTrail.SetAllDirty();
+        }
+        else
+        {
+            CursorTrail.enabled = false;
         }
     }
 
