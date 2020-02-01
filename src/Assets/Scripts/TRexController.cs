@@ -18,6 +18,9 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
 
     public Transform ModelRoot;
 
+    public ParticleSystem StompParticleLeft;
+    public ParticleSystem StompParticleRight;
+
     public void Initialize()
     {
         // Move to the opposite side of origin from target location, far enough away
@@ -71,5 +74,15 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
 
         var destructible = other.GetComponentInParent<Destructible>();
         destructible.Destruct();
+    }
+
+    public void StompLeft()
+    {
+        StompParticleLeft.Play();
+    }
+
+    public void StompRight()
+    {
+        StompParticleRight.Play();
     }
 }
