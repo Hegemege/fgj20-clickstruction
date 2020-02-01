@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7878ef7cbc30d45866662485df0a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveAbilityColor: {r: 0.3537736, g: 0.73540074, b: 1, a: 1}
+  TRexButton: {fileID: 7900346284311324598}
 --- !u!1 &1320374278407492886
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +235,7 @@ GameObject:
   - component: {fileID: 7900346284311324598}
   - component: {fileID: 510761643779484279}
   m_Layer: 0
-  m_Name: Button
+  m_Name: TRexButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
