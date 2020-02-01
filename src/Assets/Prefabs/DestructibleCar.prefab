@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 505248483417192194}
   - component: {fileID: 505248483417192192}
   - component: {fileID: 505248483417192193}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mirror_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1337770812119965449}
   - component: {fileID: 1337770812119965455}
   - component: {fileID: 1337770812119965448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 1369245645656421222}
   - component: {fileID: 1369245645656421220}
   - component: {fileID: 1369245645656421221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tire_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 1678806045950670356}
   - component: {fileID: 1678806045950670362}
   - component: {fileID: 1678806045950670363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mirror_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1385971485994167204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car_parts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 3222597378152319041}
   - component: {fileID: 3222597378152319047}
   - component: {fileID: 3222597378152319040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumber_front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 3580672237120878886}
   - component: {fileID: 3580672237120878884}
   - component: {fileID: 3580672237120878885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TIre_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +943,7 @@ GameObject:
   - component: {fileID: 5443659585735834306}
   - component: {fileID: 5443659585735834304}
   - component: {fileID: 5443659585735834305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tire_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 6378329909113782092}
   - component: {fileID: 6378329909113782130}
   - component: {fileID: 6378329909113782131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumber_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1246,7 @@ GameObject:
   - component: {fileID: 6467917641996620140}
   - component: {fileID: 6467917641996620178}
   - component: {fileID: 6467917641996620179}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car_middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 7428268268013008985}
   - component: {fileID: 7428268268013008991}
   - component: {fileID: 7428268268013008984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1504,7 +1504,7 @@ GameObject:
   - component: {fileID: 8414965650746726252}
   - component: {fileID: 8414965650746726290}
   - component: {fileID: 8414965650746726291}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TIre_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
