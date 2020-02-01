@@ -270,6 +270,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2a6761463a8444cac68cf39b690e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BarImage: {fileID: 2371788475276129715}
+  AnimationLength: 0.5
+  AnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2371788475276129709
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +380,7 @@ GameObject:
   - component: {fileID: 2371788475675070896}
   - component: {fileID: 2371788475675070897}
   - component: {fileID: 2371788475675070898}
-  - component: {fileID: 2371788475675070899}
+  - component: {fileID: 5278419144544182152}
   m_Layer: 5
   m_Name: GameUICanvas
   m_TagString: Untagged
@@ -426,7 +452,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &2371788475675070899
+--- !u!114 &5278419144544182152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,14 +461,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2371788475675070892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: 974a08ec6c0e49c459d9ad9e01d53acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  CoinBar: {fileID: 2371788475067148895}
+  ManaBar: {fileID: 2371788475687012095}
 --- !u!1 &2371788475687012089
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +517,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2a6761463a8444cac68cf39b690e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BarImage: {fileID: 2371788474679730043}
+  AnimationLength: 0.5
+  AnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2371788475776930518
 GameObject:
   m_ObjectHideFlags: 0
