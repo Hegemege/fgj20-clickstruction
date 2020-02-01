@@ -1,5 +1,5 @@
 {
-    "name": "KBMControls",
+    "name": "FixerControls",
     "maps": [
         {
             "name": "Default",
@@ -17,14 +17,6 @@
                     "name": "Repair",
                     "type": "Button",
                     "id": "50f1e950-1fff-4832-91ba-dfc2b0243c5c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Click",
-                    "type": "Button",
-                    "id": "278a0484-a258-47da-91c8-31c3d87600b4",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -151,17 +143,6 @@
                     "action": "Repair",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8d4c4c20-c730-4018-b082-7d1b98d25b82",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "DefaultScheme",
-                    "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }
@@ -173,11 +154,6 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

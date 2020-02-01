@@ -13,6 +13,6 @@ public class DestructorController : MonoBehaviour
 
     public void OnClick(InputAction.CallbackContext ctx)
     {
-        this.Log(ctx.phase);
+        Debug.Log(ctx.phase);
     }
 }

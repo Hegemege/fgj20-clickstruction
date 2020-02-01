@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/KBMControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/FixerControls.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @KBMControls : IInputActionCollection, IDisposable
+public class @FixerControls : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @KBMControls()
+    public @FixerControls()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""KBMControls"",
+    ""name"": ""FixerControls"",
     ""maps"": [
         {
             ""name"": ""Default"",
@@ -30,14 +30,6 @@ public class @KBMControls : IInputActionCollection, IDisposable
                     ""name"": ""Repair"",
                     ""type"": ""Button"",
                     ""id"": ""50f1e950-1fff-4832-91ba-dfc2b0243c5c"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""Click"",
-                    ""type"": ""Button"",
-                    ""id"": ""278a0484-a258-47da-91c8-31c3d87600b4"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
@@ -164,17 +156,6 @@ public class @KBMControls : IInputActionCollection, IDisposable
                     ""action"": ""Repair"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8d4c4c20-c730-4018-b082-7d1b98d25b82"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""DefaultScheme"",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -188,11 +169,6 @@ public class @KBMControls : IInputActionCollection, IDisposable
                     ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": false,
                     ""isOR"": false
-                },
-                {
-                    ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": false,
-                    ""isOR"": false
                 }
             ]
         }
@@ -202,7 +178,6 @@ public class @KBMControls : IInputActionCollection, IDisposable
         m_Default = asset.FindActionMap("Default", throwIfNotFound: true);
         m_Default_Movement = m_Default.FindAction("Movement", throwIfNotFound: true);
         m_Default_Repair = m_Default.FindAction("Repair", throwIfNotFound: true);
-        m_Default_Click = m_Default.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -254,14 +229,12 @@ public class @KBMControls : IInputActionCollection, IDisposable
     private IDefaultActions m_DefaultActionsCallbackInterface;
     private readonly InputAction m_Default_Movement;
     private readonly InputAction m_Default_Repair;
-    private readonly InputAction m_Default_Click;
     public struct DefaultActions
     {
-        private @KBMControls m_Wrapper;
-        public DefaultActions(@KBMControls wrapper) { m_Wrapper = wrapper; }
+        private @FixerControls m_Wrapper;
+        public DefaultActions(@FixerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Default_Movement;
         public InputAction @Repair => m_Wrapper.m_Default_Repair;
-        public InputAction @Click => m_Wrapper.m_Default_Click;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -277,9 +250,6 @@ public class @KBMControls : IInputActionCollection, IDisposable
                 @Repair.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRepair;
                 @Repair.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRepair;
                 @Repair.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnRepair;
-                @Click.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnClick;
-                @Click.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnClick;
-                @Click.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnClick;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -290,9 +260,6 @@ public class @KBMControls : IInputActionCollection, IDisposable
                 @Repair.started += instance.OnRepair;
                 @Repair.performed += instance.OnRepair;
                 @Repair.canceled += instance.OnRepair;
-                @Click.started += instance.OnClick;
-                @Click.performed += instance.OnClick;
-                @Click.canceled += instance.OnClick;
             }
         }
     }
@@ -310,6 +277,5 @@ public class @KBMControls : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnRepair(InputAction.CallbackContext context);
-        void OnClick(InputAction.CallbackContext context);
     }
 }
