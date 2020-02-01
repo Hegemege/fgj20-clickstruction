@@ -11,7 +11,7 @@ public class FixerController : MonoBehaviour
     public LayerMask RepairableLayerMask;
 
     [SerializeField]
-    private float _baseMovementSpeed;
+    private float _baseMovementSpeed; 
 
     // Hidden / privates
     [HideInInspector]
