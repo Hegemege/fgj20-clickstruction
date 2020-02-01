@@ -42,6 +42,9 @@ public class DestructorController : MonoBehaviour
             case DestructorAbility.TRex:
                 SpawnTrex();
                 break;
+            case DestructorAbility.Asteroid:
+                SpawnAsteroid();
+                break;
         }
 
         CurrentAbility = DestructorAbility.None;
@@ -75,6 +78,20 @@ public class DestructorController : MonoBehaviour
             trexWrapper.component.Initialize();
 
             _canvasController.UseAbility(DestructorAbility.TRex);
+        }
+    }
+
+    private void SpawnAsteroid()
+    {
+        if (GetEnvironmentClick(out RaycastHit hit))
+        {
+            var asteroidWrapper = PoolManager.Instance.AsteroidPool.GetPooledObject();
+            asteroidWrapper.gameObject.transform.position = hit.point;
+
+            asteroidWrapper.component.TargetLocation = hit.point;
+            asteroidWrapper.component.Initialize();
+
+            _canvasController.UseAbility(DestructorAbility.Asteroid);
         }
     }
 }

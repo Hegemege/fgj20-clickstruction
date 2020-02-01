@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLocation: {x: 0, y: 0, z: 0}
   MovementSpeed: 15
+  SwervingSpeed: 2.1
+  SwervingAngle: 10
   SpawnDistanceFromOrigin: 50
   ModelRoot: {fileID: 6468708223679868564}
 --- !u!54 &8549878972119880716

@@ -34,6 +34,8 @@ public class Destructible : MonoBehaviour
 
     public void Destruct()
     {
+        if (!Intact) return;
+
         Intact = false;
 
         // Release all rigidbodies and apply a small explosion on all of them
