@@ -12,9 +12,16 @@ public class Collectible : MonoBehaviour, IResetableBehaviour
     private float _hoverTimer;
     private Vector3 _startModelPosition;
 
+    [HideInInspector]
+    public Rigidbody RigidBody;
+
+    public SphereCollider PickupTrigger;
+
     void Awake()
     {
-        _startModelPosition = ModelRoot.position;
+        RigidBody = GetComponent<Rigidbody>();
+
+        _startModelPosition = ModelRoot.localPosition;
 
         // Add randomness to rotation
         ModelRoot.RotateAround(transform.position, Vector3.up, Random.Range(0f, 360f));
@@ -23,11 +30,20 @@ public class Collectible : MonoBehaviour, IResetableBehaviour
     public void Initialize()
     {
         _hoverTimer = 0f;
+        _startModelPosition = ModelRoot.localPosition;
+        PickupTrigger.enabled = false;
+        StartCoroutine(EnablePickupTrigger());
+    }
+
+    private IEnumerator EnablePickupTrigger()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PickupTrigger.enabled = true;
     }
 
     public void Reset()
     {
-
+        gameObject.SetActive(false);
     }
 
     void FixedUpdate()
@@ -40,6 +56,6 @@ public class Collectible : MonoBehaviour, IResetableBehaviour
         // Hover
         _hoverTimer += dt;
         var hoverEffect = (Mathf.Sin(_hoverTimer * HoverSpeed) + 1f) / 2f;
-        ModelRoot.transform.position = _startModelPosition + Vector3.up * hoverEffect;
+        ModelRoot.transform.localPosition = Vector3.up * hoverEffect;
     }
 }

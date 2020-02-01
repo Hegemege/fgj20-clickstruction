@@ -68,6 +68,23 @@ public class FixerController : MonoBehaviour
         transform.Translate(velocity * dt);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        // Pickup coins
+        if (other.CompareTag("CoinCollectible"))
+        {
+            PickupCoin(other);
+        }
+    }
+
+    private void PickupCoin(Collider other)
+    {
+        var coin = other.GetComponentInParent<Collectible>();
+        coin.Reset();
+
+        GameManager.Instance.PickupCoin();
+    }
+
     // Input System Events
     public void HandleMovement()
     {

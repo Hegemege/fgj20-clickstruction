@@ -94,6 +94,53 @@ MonoBehaviour:
     type: 3}
   WillGrow: 1
   Container: {fileID: 2951724646539737211}
+--- !u!1 &4197119557472495319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204977933320959925}
+  - component: {fileID: 7336353154805054627}
+  m_Layer: 0
+  m_Name: CoinCollectiblePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204977933320959925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197119557472495319}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1396094565395984536}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7336353154805054627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197119557472495319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c147a32eeb772e347bb6b5def3135b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledObjectPrefab: {fileID: 8045371377017058344, guid: e617d60687a01194aab36ea1fba01f31,
+    type: 3}
+  WillGrow: 1
+  Container: {fileID: 4197119557472495319}
 --- !u!1 &5062298249847984649
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +220,8 @@ Transform:
   - {fileID: 2685926440390883759}
   - {fileID: 6968052374817558113}
   - {fileID: 2153010758445022226}
+  - {fileID: 4162812640114845621}
+  - {fileID: 204977933320959925}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -190,6 +239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TRexPool: {fileID: 0}
   AsteroidPool: {fileID: 0}
+  ManaCollectiblePool: {fileID: 1319622681874335446}
+  CoinCollectiblePool: {fileID: 7336353154805054627}
   AsteroidImpactParticlePool: {fileID: 2021585316405169748}
   AsteroidImpactCircleParticlePool: {fileID: 5219576018372174743}
 --- !u!1 &8714917060043957666
@@ -239,3 +290,50 @@ MonoBehaviour:
     type: 3}
   WillGrow: 1
   Container: {fileID: 8714917060043957666}
+--- !u!1 &9027638020034339032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4162812640114845621}
+  - component: {fileID: 1319622681874335446}
+  m_Layer: 0
+  m_Name: ManaCollectiblePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4162812640114845621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9027638020034339032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1396094565395984536}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1319622681874335446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9027638020034339032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c147a32eeb772e347bb6b5def3135b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PooledObjectPrefab: {fileID: 8045371377017058344, guid: 6ac79772f182fd944b6e73c10fea1703,
+    type: 3}
+  WillGrow: 1
+  Container: {fileID: 9027638020034339032}
