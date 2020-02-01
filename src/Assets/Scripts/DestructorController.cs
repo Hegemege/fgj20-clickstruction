@@ -66,12 +66,13 @@ public class DestructorController : MonoBehaviour
 
     private void SpawnTrex()
     {
-        this.Log("SpawnTrex");
-
         if (GetEnvironmentClick(out RaycastHit hit))
         {
             var trexWrapper = PoolManager.Instance.TRexPool.GetPooledObject();
             trexWrapper.gameObject.transform.position = hit.point;
+
+            trexWrapper.component.TargetLocation = hit.point;
+            trexWrapper.component.Initialize();
 
             _canvasController.UseAbility(DestructorAbility.TRex);
         }
