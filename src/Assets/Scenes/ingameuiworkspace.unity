@@ -1505,10 +1505,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 221253377991369709, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9ee3692c43af8b4098863bfeac63273,
+        type: 3}
+    - target: {fileID: 530635200883281780, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276710946949855273, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276710946949855273, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376737211818086635, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3554667878958175531, guid: e5074bc7feaacbf49b03a01af7658859,
         type: 3}
       propertyPath: m_Name
       value: GameEndCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201748107873010120, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 6860441674055567143, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e9ee3692c43af8b4098863bfeac63273,
+        type: 3}
+    - target: {fileID: 6901349393855259457, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401655767975344499, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7401655767975344499, guid: e5074bc7feaacbf49b03a01af7658859,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 9026610153727601049, guid: e5074bc7feaacbf49b03a01af7658859,
         type: 3}
