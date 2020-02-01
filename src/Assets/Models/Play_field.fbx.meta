@@ -3,7 +3,57 @@ guid: 37444b38c3f1aa148b185d8a44ded763
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Car_road
+    second: {fileID: 2100000, guid: 0faf446d5f85e3548878db05d6650b9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: 1a731a8eebd33454186923f25d4f04ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House
+    second: {fileID: 2100000, guid: 45e062e3ecd08734fbe9c203962bf4d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_base
+    second: {fileID: 2100000, guid: c7cc21d75ee550c4d8c2bbba767d4444, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_edges
+    second: {fileID: 2100000, guid: 89a8eafe91ee7b14d8e41c28be08b7d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: House_window
+    second: {fileID: 2100000, guid: f2f6a7d4b315475499a2fdb8a5dcbae6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Park_road
+    second: {fileID: 2100000, guid: 285546ca5254c1f4a959dd26a8e9e5a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road_edge
+    second: {fileID: 2100000, guid: 2f588b3a267a24142ae16cd6dde11fd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Road_white
+    second: {fileID: 2100000, guid: 45bab94a6e34eb54f9ab47718896892a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walk_road
+    second: {fileID: 2100000, guid: c0f5b74dbe952c945b50be509a676fef, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -80,7 +130,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
