@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RepairDuration: 1
-  DestructiblePartRoot: {fileID: 0}
+  DestructiblePartRoot: {fileID: 1385971485994167204}
   Intact: 1
 --- !u!1 &6378329909113782093
 GameObject:
