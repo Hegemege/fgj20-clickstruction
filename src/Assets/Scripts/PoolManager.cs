@@ -10,6 +10,9 @@ public class PoolManager : GenericManager<PoolManager>, ILoadedManager
     [HideInInspector]
     public AsteroidPool AsteroidPool;
 
+    public ParticleSystemPool AsteroidImpactParticlePool;
+    public ParticleSystemPool AsteroidImpactCircleParticlePool;
+
     public void Initialize()
     {
         if (!InitializeSingleton(this)) return;
