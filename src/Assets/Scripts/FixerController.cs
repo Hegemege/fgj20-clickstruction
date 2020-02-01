@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityUtilities;
 
 public class FixerController : MonoBehaviour
@@ -11,7 +10,7 @@ public class FixerController : MonoBehaviour
     public LayerMask RepairableLayerMask;
 
     [SerializeField]
-    private float _baseMovementSpeed; 
+    private float _baseMovementSpeed;
 
     // Hidden / privates
     [HideInInspector]
@@ -49,6 +48,10 @@ public class FixerController : MonoBehaviour
         {
             State = _inputDirection.magnitude > 0f ? PlayerState.Moving : PlayerState.Idle;
         }
+
+        // Get Input
+        HandleMovement();
+        HandleRepair();
     }
 
     void FixedUpdate()
@@ -66,23 +69,24 @@ public class FixerController : MonoBehaviour
     }
 
     // Input System Events
-    public void OnMovement(InputAction.CallbackContext ctx)
+    public void HandleMovement()
     {
-        _inputDirection = ctx.ReadValue<Vector2>();
+        var inputX = Input.GetAxis("Horizontal");
+        var inputY = Input.GetAxis("Vertical");
+        _inputDirection = new Vector2(inputX, inputY);
     }
 
-    public void OnRepair(InputAction.CallbackContext ctx)
+    public void HandleRepair()
     {
-        switch (ctx.phase)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            case InputActionPhase.Started:
-                State = PlayerState.Repairing;
-                OnStartRepair();
-                break;
-            case InputActionPhase.Canceled:
-                State = PlayerState.Idle;
-                OnStopRepair();
-                break;
+            State = PlayerState.Repairing;
+            OnStartRepair();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            State = PlayerState.Idle;
+            OnStopRepair();
         }
     }
 
