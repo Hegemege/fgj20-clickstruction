@@ -21,9 +21,16 @@ public class AsteroidController : MonoBehaviour, IResetableBehaviour
 
     public Transform ModelRoot;
 
+    private MeshRenderer _mr;
+    private SphereCollider _collider;
+    private ParticleSystem _particles;
+
     void Awake()
     {
         _rigidBody = GetComponent<Rigidbody>();
+        _mr = GetComponentInChildren<MeshRenderer>();
+        _collider = GetComponentInChildren<SphereCollider>();
+        _particles = GetComponentInChildren<ParticleSystem>();
     }
 
     public void Initialize()
@@ -75,8 +82,31 @@ public class AsteroidController : MonoBehaviour, IResetableBehaviour
             destructible.Destruct();
         }
 
-        // TODO: Spawn effets
+        SpawnImpactEffects();
 
+        StartCoroutine(DelayedReset());
+    }
+
+    private void SpawnImpactEffects()
+    {
+        var particles = PoolManager.Instance.AsteroidImpactParticlePool.GetPooledObject();
+        var circleParticles = PoolManager.Instance.AsteroidImpactCircleParticlePool.GetPooledObject();
+
+        particles.gameObject.transform.position = transform.position;
+        circleParticles.gameObject.transform.position = transform.position;
+    }
+
+    private IEnumerator DelayedReset()
+    {
+        _mr.enabled = false;
+        _collider.enabled = false;
+        _rigidBody.isKinematic = true;
+        _particles.Stop();
+        yield return new WaitForSeconds(1f);
+        _mr.enabled = true;
+        _collider.enabled = true;
+        _rigidBody.isKinematic = false;
+        _particles.Play();
         Reset();
     }
 
