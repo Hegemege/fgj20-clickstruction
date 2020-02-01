@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityUtilities;
 
 public class ManaBar : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class ManaBar : MonoBehaviour
 
     private float _animationTimer;
     private Coroutine _animation;
+
+    public TextMeshProUGUI ValueText;
 
     private void Awake()
     {
@@ -59,6 +63,13 @@ public class ManaBar : MonoBehaviour
 
     private void UpdateFillAmount()
     {
-        BarImage.fillAmount = Mathf.Clamp01(_currentValue / _maxValue);
+        var t = Mathf.Clamp01(_currentValue / _maxValue);
+        BarImage.fillAmount = t;
+
+        // Update value text position and value
+        ValueText.text = FloatStringCache.Get(_currentValue, 0);
+        var y = BarImage.rectTransform.rect.yMin + BarImage.rectTransform.rect.height * t;
+
+        ValueText.rectTransform.localPosition = new Vector3(ValueText.rectTransform.localPosition.x, y, ValueText.rectTransform.localPosition.z);
     }
 }

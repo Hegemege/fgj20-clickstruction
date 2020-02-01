@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GameState
+{
+    Loading = 0,
+    Menu = 1,
+    Tutorial = 2,
+    Match = 3,
+    VictoryScreen = 4,
+}
+
 public enum PlayerState
 {
     Idle = 0,
