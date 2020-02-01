@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8913179939836003979
+--- !u!114 &-5872049952829773356
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fence_back
+  m_Name: Statue_stand_top
   m_Shader: {fileID: -6465566751694194690, guid: e87631564b11f44df856e594cea2c530,
     type: 3}
   m_ShaderKeywords: HARD_SHADING_ON
@@ -108,8 +108,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Color: {r: 0.5377358, g: 0.474852, b: 0.44895867, a: 1}
+    - _Color: {r: 0.6603774, g: 0.6306652, b: 0.56381273, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _Specular: {r: 0, g: 0, b: 0, a: 0}
+    - _Specular: {r: 0.2075472, g: 0.2075472, b: 0.2075472, a: 0}
     - _TextureTiling: {r: 1, g: 1, b: 0, a: 0}
