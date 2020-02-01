@@ -9,3 +9,10 @@ public enum PlayerState
     Repairing = 2,
     Stunned = 3
 }
+
+public enum DestructorAbility
+{
+    None = 0,
+    TRex = 1,
+
+}

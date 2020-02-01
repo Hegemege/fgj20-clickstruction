@@ -8,6 +8,8 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     public AnimationCurve PartRepairPositionAnimation;
     public AnimationCurve PartRepairRotationAnimation;
 
+    public CameraController CameraController;
+
     public void Initialize()
     {
         if (!InitializeSingleton(this)) return;
