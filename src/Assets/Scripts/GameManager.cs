@@ -31,6 +31,13 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
     private float _refreshManaBarTimer;
 
+    public Texture2D CursorImage;
+
+    void Awake()
+    {
+        Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
+    }
+
     public void Initialize()
     {
         if (!InitializeSingleton(this)) return;

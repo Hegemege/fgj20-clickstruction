@@ -124,8 +124,16 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   CameraController: {fileID: 2395826673013469664}
-  DestructorController: {fileID: 0}
-  FixerController: {fileID: 0}
+  UIController: {fileID: 0}
+  State: 0
+  ManaMax: 100
+  CoinMax: 100
+  Mana: 10
+  Coins: 0
+  CoinPickupWorth: 1
+  ManaPickupWorth: 1
+  ManaRegenRate: 0.5
+  CursorImage: {fileID: 2800000, guid: b2d636938f49e5b499e3cac4776f0b8e, type: 3}
 --- !u!1001 &6101891448246533847
 PrefabInstance:
   m_ObjectHideFlags: 0
