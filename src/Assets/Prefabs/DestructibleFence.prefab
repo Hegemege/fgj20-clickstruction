@@ -1216,5 +1216,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RepairDuration: 1
-  DestructiblePartRoot: {fileID: 0}
+  DestructiblePartRoot: {fileID: 73961690935797961}
   Intact: 1
