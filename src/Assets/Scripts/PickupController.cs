@@ -20,9 +20,24 @@ public class PickupController : MonoBehaviour, IResetableBehaviour
 
     private float _cost;
 
+    public bool InitializeOnAwake;
+    public float CanvasRotationSpeed = 180f;
+
     void Awake()
     {
         _canvas = GetComponentInChildren<Canvas>();
+
+        if (InitializeOnAwake)
+        {
+            Initialize();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        var dt = Time.fixedDeltaTime;
+
+        _canvas.transform.Rotate(Vector3.up, CanvasRotationSpeed * dt);
     }
 
     public void Initialize()
