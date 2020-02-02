@@ -64,6 +64,18 @@ public class Destructible : MonoBehaviour
 
         Intact = false;
 
+        if (Repairable)
+        {
+            if (spawnMana)
+            {
+                GameManager.Instance.PickupMana();
+            }
+            if (playSound)
+            {
+                PoolManager.Instance.ManaCollectAudio.GetPooledObject();
+            }
+        }
+
         if (playSound)
         {
             if (Repairable)

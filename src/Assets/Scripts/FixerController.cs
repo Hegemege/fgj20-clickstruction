@@ -188,6 +188,7 @@ public class FixerController : MonoBehaviour
 
             var destructible = collider.GetComponentInParent<Destructible>();
             if (destructible == null || destructible.Intact) continue;
+            if (destructible.Repairable == false) continue;
 
             repairTarget = destructible;
         }
