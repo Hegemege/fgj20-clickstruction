@@ -189,6 +189,9 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
                 EndMatch(Victory.Destructor);
             }
         }
+
+        // Mana regen update
+        ManaRegenRate += dt * 0.02f;
     }
 
     public IEnumerator StartMatch()
@@ -196,6 +199,8 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         yield return new WaitForSeconds(0.5f);
         Mana = 10f;
         Coins = 0f;
+
+        ManaRegenRate = 1f;
 
         _victoryTimer = 0f;
 
