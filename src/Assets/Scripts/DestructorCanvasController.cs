@@ -9,6 +9,10 @@ public class DestructorCanvasController : MonoBehaviour
     public Image TRexButton;
     public Image AsteroidButton;
     public Image QuicksandButton;
+    public Image ArmageddonButton;
+
+
+
 
     private DestructorController _destructorController;
 
@@ -32,6 +36,12 @@ public class DestructorCanvasController : MonoBehaviour
         SetActiveAbility(DestructorAbility.Quicksand, QuicksandButton);
     }
 
+    public void OnClickArmageddon()
+    {
+        SetActiveAbility(DestructorAbility.Armageddon, ArmageddonButton);
+    }
+
+
     private void SetActiveAbility(DestructorAbility ability, Image buttonImage)
     {
         var activate = _destructorController.CurrentAbility != ability;
@@ -52,6 +62,7 @@ public class DestructorCanvasController : MonoBehaviour
         TRexButton.color = Color.white;
         AsteroidButton.color = Color.white;
         QuicksandButton.color = Color.white;
+        ArmageddonButton.color = Color.white;
     }
 
     public void UseAbility(DestructorAbility ability)
