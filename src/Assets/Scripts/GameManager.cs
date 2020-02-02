@@ -162,7 +162,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
         _victoryTimer += dt;
 
-        if (_victoryTimer > 2f)
+        if (_victoryTimer > 2f && State == GameState.Match)
         {
             if (destroyedCount == 0)
             {

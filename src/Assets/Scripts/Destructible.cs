@@ -22,6 +22,9 @@ public class Destructible : MonoBehaviour
 
     public bool Repairable = true;
 
+    private float _repairAudioTimer = 0f;
+    private float _repairAudioInterval = 0.5f;
+
     public float RepairLength
     {
         get
@@ -84,6 +87,7 @@ public class Destructible : MonoBehaviour
     public void StartRepair()
     {
         _repairTimer = 0f;
+        _repairAudioTimer = 0f;
 
         // Stop physics on the parts and animate them towards
         foreach (var part in DestructibleParts)
@@ -99,6 +103,13 @@ public class Destructible : MonoBehaviour
         while (_repairTimer < RepairLength)
         {
             _repairTimer += Time.deltaTime;
+
+            _repairAudioTimer -= Time.deltaTime;
+            if (_repairAudioTimer < 0f)
+            {
+                _repairAudioTimer = _repairAudioInterval;
+                PoolManager.Instance.RepairAudio.GetPooledObject();
+            }
 
             var t = Mathf.Clamp01(_repairTimer / RepairLength);
 
