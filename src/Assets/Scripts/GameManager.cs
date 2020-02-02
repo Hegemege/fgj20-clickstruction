@@ -33,15 +33,16 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     public int CollectedBoots;
     public int CollectedWrenches;
 
-    public float AsteroidCost = 10f;
+    public float AsteroidManaCost = 10f;
     public float TRexManaCost = 40f;
-    public float QuicksandCost = 15f;
-    public float ArmageddonCost = 90f;
+    public float QuicksandManaCost = 15f;
+    public float ArmageddonManaCost = 90f;
 
 
     private float _refreshManaBarTimer;
 
     public Texture2D CursorImage;
+    public Texture2D CursorPressedImage;
     public Canvas CursorTrailCanvas;
     private CanvasScaler _trailCanvasScaler;
     public UILineRenderer CursorTrail;
@@ -110,6 +111,16 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         else
         {
             CursorTrail.enabled = false;
+        }
+
+        // Update cursor clicking
+        if (Input.GetMouseButtonDown(0))
+        {
+            Cursor.SetCursor(CursorPressedImage, Vector2.zero, CursorMode.ForceSoftware);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
 

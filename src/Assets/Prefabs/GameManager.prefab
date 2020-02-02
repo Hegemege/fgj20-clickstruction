@@ -336,6 +336,7 @@ MonoBehaviour:
   QuicksandCost: 15
   ArmageddonCost: 90
   CursorImage: {fileID: 2800000, guid: b2d636938f49e5b499e3cac4776f0b8e, type: 3}
+  CursorPressedImage: {fileID: 2800000, guid: b3bf143982aa1e243aa58f20c642e53c, type: 3}
   CursorTrailCanvas: {fileID: 6844181631458322075}
   CursorTrail: {fileID: 7509733317187701112}
 --- !u!1001 &6101891448246533847
