@@ -148,7 +148,7 @@ public class FixerController : MonoBehaviour
                 case PickupType.Shield:
                     break;
             }
-            powerup.Reset();
+            powerup.transform.position += Vector3.up * 50f;
             PoolManager.Instance.PowerupPickupAudio.GetPooledObject();
         }
 
