@@ -13,7 +13,6 @@ public class FixerController : MonoBehaviour
     private float _baseMovementSpeed;
 
     // Hidden / privates
-    [HideInInspector]
     public PlayerState State = PlayerState.Idle;
 
     private Vector2 _inputDirection;
@@ -64,13 +63,7 @@ public class FixerController : MonoBehaviour
         // Update State for moving/idle
         if (CanMove)
         {
-            State = _inputDirection.magnitude > 0f ? PlayerState.Moving : PlayerState.Idle;
-
-            if (_oldRunState != CanMove)
-            {
-                Animator.SetTrigger(State == PlayerState.Moving ? "StartRun" : "Idle");
-            }
-            _oldRunState = CanMove;
+            //State = _inputDirection.magnitude > 0f ? PlayerState.Moving : PlayerState.Idle;
         }
 
         // Get Input
@@ -170,6 +163,18 @@ public class FixerController : MonoBehaviour
         var inputX = Input.GetAxis("Horizontal");
         var inputY = Input.GetAxis("Vertical");
         _inputDirection = new Vector2(inputX, inputY);
+
+        if (_inputDirection.magnitude > 0f && State != PlayerState.Idle)
+        {
+            State = PlayerState.Moving;
+            Animator.SetTrigger("StartRun");
+        }
+
+        if (_inputDirection.magnitude < 0.01f && State == PlayerState.Moving)
+        {
+            State = PlayerState.Idle;
+            Animator.SetTrigger("Idle");
+        }
     }
 
     public void HandleRepair()
