@@ -27,5 +27,11 @@ namespace UnityUtilities
                 _ps.Play();
             }
         }
+
+        void OnDisable()
+        {
+            _ps.Stop();
+            _ps.Clear();
+        }
     }
 }

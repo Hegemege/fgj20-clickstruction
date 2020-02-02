@@ -35,3 +35,9 @@ public enum PickupType
     Wrench = 1,
     Shield = 2,
 }
+
+public enum Victory
+{
+    Fixer = 0,
+    Destructor = 1
+}

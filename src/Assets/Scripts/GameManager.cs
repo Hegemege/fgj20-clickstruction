@@ -47,6 +47,9 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     private CanvasScaler _trailCanvasScaler;
     public UILineRenderer CursorTrail;
 
+    public EndCanvasController EndCanvas;
+    public Victory WinningPlayer;
+
     void Awake()
     {
         Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
@@ -72,6 +75,16 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             Coins = Mathf.Clamp(Coins + 10, 0f, CoinMax);
             Mana = Mathf.Clamp(Mana + 10, 0f, ManaMax);
             UIController.RefreshBars();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            EndMatch(Victory.Fixer);
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            EndMatch(Victory.Destructor);
         }
 #endif
 
@@ -129,10 +142,26 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         Mana = 10f;
         Coins = 0f;
 
+        UIController.RefreshBars();
+
         CollectedBoots = 0;
         CollectedWrenches = 0;
+    }
 
-        UIController.RefreshBars();
+    public void EndMatch(Victory ending)
+    {
+        State = GameState.VictoryScreen;
+        EndCanvas.gameObject.SetActive(true);
+
+        WinningPlayer = ending;
+        if (WinningPlayer == Victory.Fixer)
+        {
+            EndCanvas.FixerText.SetActive(true);
+        }
+        else
+        {
+            EndCanvas.DestructorText.SetActive(true);
+        }
     }
 
     public void PickupCoin()
