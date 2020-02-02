@@ -20,6 +20,24 @@ public class PoolManager : GenericManager<PoolManager>, ILoadedManager
     public ParticleSystemPool AsteroidImpactParticlePool;
     public ParticleSystemPool AsteroidImpactCircleParticlePool;
 
+    public AudioPool AsteroidSpawnAudio;
+    public AudioPool AsteroidImpactAudio;
+    public AudioPool CoinPickupAudio;
+
+    public AudioPool DestructionBigAudio;
+
+    public AudioPool DestructionSmallAudio;
+
+    public AudioPool DinoSpawnAudio;
+
+    public AudioPool DinoStompAudio;
+
+    public AudioPool ManaCollectAudio;
+
+    public AudioPool PowerupPickupAudio;
+
+    public AudioPool RepairAudio;
+
     public void Initialize()
     {
         if (!InitializeSingleton(this)) return;
