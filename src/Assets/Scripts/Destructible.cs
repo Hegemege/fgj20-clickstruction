@@ -25,6 +25,8 @@ public class Destructible : MonoBehaviour
     private float _repairAudioTimer = 0f;
     private float _repairAudioInterval = 0.5f;
 
+    public GameObject Markers;
+
     public float RepairLength
     {
         get
@@ -41,6 +43,8 @@ public class Destructible : MonoBehaviour
         {
             part.Parent = this;
         }
+
+        Markers.SetActive(false);
     }
 
     void Start()
@@ -58,11 +62,17 @@ public class Destructible : MonoBehaviour
 #endif
     }
 
+    void FixedUpdate()
+    {
+        Markers.transform.Rotate(Vector3.up, 180f * Time.deltaTime);
+    }
+
     public void Destruct(bool spawnMana = true, bool playSound = true, bool force = false)
     {
         if (!Intact && !force) return;
 
         Intact = false;
+        Markers.SetActive(true);
 
         if (Repairable)
         {
@@ -155,6 +165,7 @@ public class Destructible : MonoBehaviour
 
     private void EndRepair()
     {
+        Markers.SetActive(false);
         _repairTimer = 0f;
         Intact = true;
         foreach (var part in DestructibleParts)
