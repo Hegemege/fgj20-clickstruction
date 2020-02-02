@@ -118,6 +118,11 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             StartCoroutine(StartMatch());
         }
 
+        if (scene.name == "menu")
+        {
+            State = GameState.Menu;
+        }
+
         if (State == GameState.Match)
         {
             Mana = Mathf.Clamp(Mana + ManaRegenRate * dt, 0f, ManaMax);
