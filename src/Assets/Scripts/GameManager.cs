@@ -30,6 +30,9 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
     public float ManaRegenRate = 0.5f;
 
+    public int CollectedBoots;
+    public int CollectedWrenches;
+
 
     private float _refreshManaBarTimer;
 
@@ -109,6 +112,9 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     {
         Mana = 10f;
         Coins = 0f;
+
+        CollectedBoots = 0;
+        CollectedWrenches = 0;
 
         UIController.RefreshBars();
     }

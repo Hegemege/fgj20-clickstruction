@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Destructible : MonoBehaviour
 {
-    public float RepairDuration = 2f;
+    public float RepairBaseDuration = 2f;
 
     public Transform DestructiblePartRoot;
 
@@ -16,6 +16,18 @@ public class Destructible : MonoBehaviour
     private Coroutine _repairCoroutine;
 
     public int FixRewardCoins = 8;
+
+    public float WrenchBoostSeconds = 0.5f;
+    public float MinimumRepairTime = 0.3f;
+
+    public float RepairLength
+    {
+        get
+        {
+            var duration = RepairBaseDuration - GameManager.Instance.CollectedWrenches * WrenchBoostSeconds;
+            return Mathf.Clamp(duration, MinimumRepairTime, RepairBaseDuration);
+        }
+    }
 
     void Awake()
     {
@@ -65,11 +77,11 @@ public class Destructible : MonoBehaviour
 
     private IEnumerator DoRepair()
     {
-        while (_repairTimer < RepairDuration)
+        while (_repairTimer < RepairLength)
         {
             _repairTimer += Time.deltaTime;
 
-            var t = Mathf.Clamp01(_repairTimer / RepairDuration);
+            var t = Mathf.Clamp01(_repairTimer / RepairLength);
 
             // Animate parts back to where they came from
             foreach (var part in DestructibleParts)

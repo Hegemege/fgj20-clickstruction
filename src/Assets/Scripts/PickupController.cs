@@ -18,7 +18,8 @@ public class PickupController : MonoBehaviour, IResetableBehaviour
     public float WrenchCost = 15;
     public float ShieldCost = 80;
 
-    private float _cost;
+    [HideInInspector]
+    public float Cost;
 
     public bool InitializeOnAwake;
     public float CanvasRotationSpeed = 180f;
@@ -49,21 +50,21 @@ public class PickupController : MonoBehaviour, IResetableBehaviour
         switch (Type)
         {
             case PickupType.Boots:
-                _cost = BootsCost;
+                Cost = BootsCost;
                 break;
             case PickupType.Wrench:
-                _cost = WrenchCost;
+                Cost = WrenchCost;
                 break;
             case PickupType.Shield:
-                _cost = ShieldCost;
+                Cost = ShieldCost;
                 break;
         }
-        PriceText.text = FloatStringCache.Get(_cost, 0);
+        PriceText.text = FloatStringCache.Get(Cost, 0);
     }
 
     public void Reset()
     {
-
+        gameObject.SetActive(false);
     }
 
 }

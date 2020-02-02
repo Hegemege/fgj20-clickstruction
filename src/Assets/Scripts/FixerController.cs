@@ -24,12 +24,14 @@ public class FixerController : MonoBehaviour
     private Quaternion _targetModelRotation;
     public float RotationSmoothing;
 
+    public float BootsMultiplier = 0.25f;
+
     // Props
     public float MovementSpeed
     {
         get
         {
-            return _baseMovementSpeed;
+            return _baseMovementSpeed * (1f + GameManager.Instance.CollectedBoots * BootsMultiplier);
         }
     }
 
@@ -90,6 +92,12 @@ public class FixerController : MonoBehaviour
         {
             PickupCoin(other);
         }
+
+        // Powerups
+        if (other.CompareTag("Pickup"))
+        {
+            PickupPowerup(other);
+        }
     }
 
     private void PickupCoin(Collider other)
@@ -98,6 +106,26 @@ public class FixerController : MonoBehaviour
         coin.Reset();
 
         GameManager.Instance.PickupCoin();
+    }
+
+    private void PickupPowerup(Collider other)
+    {
+        var powerup = other.GetComponentInParent<PickupController>();
+        if (GameManager.Instance.SpendCoins(powerup.Cost))
+        {
+            switch (powerup.Type)
+            {
+                case PickupType.Boots:
+                    GameManager.Instance.CollectedBoots += 1;
+                    break;
+                case PickupType.Wrench:
+                    GameManager.Instance.CollectedWrenches += 1;
+                    break;
+                case PickupType.Shield:
+                    break;
+            }
+            powerup.Reset();
+        }
     }
 
     // Input System Events
