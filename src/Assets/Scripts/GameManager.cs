@@ -82,13 +82,21 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             return;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         // TEMP
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.C))
         {
             Coins = Mathf.Clamp(Coins + 10, 0f, CoinMax);
             Mana = Mathf.Clamp(Mana + 10, 0f, ManaMax);
-            UIController.RefreshBars();
+            if (UIController)
+            {
+                UIController.RefreshBars();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -118,7 +126,10 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             if (_refreshManaBarTimer > 1f)
             {
                 _refreshManaBarTimer = 0f;
-                UIController.RefreshManaBar();
+                if (UIController)
+                {
+                    UIController.RefreshManaBar();
+                }
             }
 
             CursorTrail.enabled = true;
@@ -153,7 +164,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         // Win/lose condition
         _victoryTimer += dt;
 
-        if (_victoryTimer > 2f && State == GameState.Match)
+        if (_victoryTimer > 5f && State == GameState.Match)
         {
             var destroyedCount = 0;
             var maxRepairables = 0;
@@ -188,7 +199,10 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
         _victoryTimer = 0f;
 
-        UIController.RefreshBars();
+        if (UIController)
+        {
+            UIController.RefreshBars();
+        }
 
         // Get all destructibles
         Destructibles.Clear();
@@ -243,13 +257,19 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     public void PickupCoin()
     {
         Coins = Mathf.Clamp(Coins + CoinPickupWorth, 0f, CoinMax);
-        UIController.RefreshBars();
+        if (UIController)
+        {
+            UIController.RefreshBars();
+        }
     }
 
     public void PickupMana()
     {
         Mana = Mathf.Clamp(Mana + ManaPickupWorth, 0f, ManaMax);
-        UIController.RefreshBars();
+        if (UIController)
+        {
+            UIController.RefreshBars();
+        }
     }
 
     public bool SpendCoins(float amount)
@@ -257,7 +277,10 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         if (amount > Coins) return false;
 
         Coins -= amount;
-        UIController.RefreshBars();
+        if (UIController)
+        {
+            UIController.RefreshBars();
+        }
         return true;
     }
 
@@ -266,7 +289,10 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         if (amount > Mana) return false;
 
         Mana -= amount;
-        UIController.RefreshBars();
+        if (UIController)
+        {
+            UIController.RefreshBars();
+        }
         return true;
     }
 }
