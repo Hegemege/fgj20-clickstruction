@@ -47,6 +47,9 @@ MonoBehaviour:
   StaticEnvironmentLayer:
     serializedVersion: 2
     m_Bits: 2048
+  CurrentAbility: 0
+  AsteroidsInArmageddon: 12
+  ArmageddonInterval: 0.6
 --- !u!1 &5911177177048197831
 GameObject:
   m_ObjectHideFlags: 0
