@@ -127,6 +127,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5174893820879450668}
     m_Modifications:
+    - target: {fileID: 1471825781705508828, guid: e3d6e4c39f6cfb440aa87e96b2aa4d90,
+        type: 3}
+      propertyPath: ManaPickupWorth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699221282667752575, guid: e3d6e4c39f6cfb440aa87e96b2aa4d90,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699221282667752575, guid: e3d6e4c39f6cfb440aa87e96b2aa4d90,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8581523691467995328, guid: e3d6e4c39f6cfb440aa87e96b2aa4d90,
         type: 3}
       propertyPath: m_Name

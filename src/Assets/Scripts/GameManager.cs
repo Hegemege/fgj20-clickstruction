@@ -158,12 +158,12 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             if (destructible.Repairable)
             {
                 maxRepairables += 1;
+                if (destructible.Intact == false)
+                {
+                    destroyedCount += 1;
+                }
             }
 
-            if (destructible.Intact == false)
-            {
-                destroyedCount += 1;
-            }
         }
 
         _victoryTimer += dt;
