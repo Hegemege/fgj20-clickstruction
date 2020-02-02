@@ -47,8 +47,16 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     private CanvasScaler _trailCanvasScaler;
     public UILineRenderer CursorTrail;
 
+    public EndCanvasController EndCanvas;
+    public Victory WinningPlayer;
+
+    public List<Destructible> Destructibles;
+
+    private float _victoryTimer;
+
     void Awake()
     {
+        Destructibles = new List<Destructible>();
         Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
 
         _trailCanvasScaler = CursorTrailCanvas.GetComponent<CanvasScaler>();
@@ -72,6 +80,16 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             Coins = Mathf.Clamp(Coins + 10, 0f, CoinMax);
             Mana = Mathf.Clamp(Mana + 10, 0f, ManaMax);
             UIController.RefreshBars();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            EndMatch(Victory.Fixer);
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            EndMatch(Victory.Destructor);
         }
 #endif
 
@@ -122,6 +140,30 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         {
             Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
         }
+
+        // Win/lose condition
+        var destroyedCount = 0;
+        foreach (var destructible in Destructibles)
+        {
+            if (destructible.Intact == false)
+            {
+                destroyedCount += 1;
+            }
+        }
+
+        _victoryTimer += dt;
+
+        if (_victoryTimer > 2f)
+        {
+            if (destroyedCount == 0)
+            {
+                EndMatch(Victory.Fixer);
+            }
+            else if (destroyedCount == Destructibles.Count)
+            {
+                EndMatch(Victory.Destructor);
+            }
+        }
     }
 
     public void StartMatch()
@@ -129,10 +171,39 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         Mana = 10f;
         Coins = 0f;
 
+        UIController.RefreshBars();
+
+        // Destroy half of destructibles
+        var destroy = true;
+        foreach (var destructible in Destructibles)
+        {
+            destroy = !destroy;
+            if (destroy)
+            {
+                destructible.Destruct(false);
+            }
+        }
+
         CollectedBoots = 0;
         CollectedWrenches = 0;
+    }
 
-        UIController.RefreshBars();
+    public void EndMatch(Victory ending)
+    {
+        State = GameState.VictoryScreen;
+        EndCanvas.gameObject.SetActive(true);
+
+        Destructibles.Clear();
+
+        WinningPlayer = ending;
+        if (WinningPlayer == Victory.Fixer)
+        {
+            EndCanvas.FixerText.SetActive(true);
+        }
+        else
+        {
+            EndCanvas.DestructorText.SetActive(true);
+        }
     }
 
     public void PickupCoin()

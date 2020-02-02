@@ -40,6 +40,7 @@ public class DestructorCanvasController : MonoBehaviour
 
     public void OnClickTrex()
     {
+        if (GameManager.Instance.State != GameState.Match) return;
         if (GameManager.Instance.SpendMana(GameManager.Instance.TRexManaCost))
         {
             SetActiveAbility(DestructorAbility.TRex, TRexButton);
@@ -48,6 +49,7 @@ public class DestructorCanvasController : MonoBehaviour
 
     public void OnClickAsteroid()
     {
+        if (GameManager.Instance.State != GameState.Match) return;
         if (GameManager.Instance.SpendMana(GameManager.Instance.AsteroidManaCost))
         {
             SetActiveAbility(DestructorAbility.Asteroid, AsteroidButton);
@@ -56,6 +58,7 @@ public class DestructorCanvasController : MonoBehaviour
 
     public void OnClickQuicksand()
     {
+        if (GameManager.Instance.State != GameState.Match) return;
         if (GameManager.Instance.SpendMana(GameManager.Instance.QuicksandManaCost))
         {
             SetActiveAbility(DestructorAbility.Quicksand, QuicksandButton);
@@ -64,6 +67,7 @@ public class DestructorCanvasController : MonoBehaviour
 
     public void OnClickArmageddon()
     {
+        if (GameManager.Instance.State != GameState.Match) return;
         if (GameManager.Instance.SpendMana(GameManager.Instance.ArmageddonManaCost))
         {
             SetActiveAbility(DestructorAbility.Armageddon, ArmageddonButton);

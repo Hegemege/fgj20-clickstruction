@@ -38,6 +38,11 @@ public class Destructible : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        GameManager.Instance.Destructibles.Add(this);
+    }
+
     void Update()
     {
 #if UNITY_EDITOR
@@ -48,7 +53,7 @@ public class Destructible : MonoBehaviour
 #endif
     }
 
-    public void Destruct()
+    public void Destruct(bool spawnMana = true)
     {
         if (!Intact) return;
 

@@ -95,5 +95,13 @@ namespace UnityUtilities
 
             return wrapper;
         }
+
+        public void ResetPool()
+        {
+            foreach (var obj in Pool)
+            {
+                obj.gameObject.SetActive(false);
+            }
+        }
     }
 }

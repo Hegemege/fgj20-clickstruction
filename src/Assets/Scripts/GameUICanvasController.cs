@@ -10,6 +10,7 @@ public class GameUICanvasController : MonoBehaviour
     void Start()
     {
         GameManager.Instance.UIController = this;
+        RefreshBars();
     }
 
     public void RefreshBars()

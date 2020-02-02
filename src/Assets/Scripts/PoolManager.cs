@@ -49,4 +49,16 @@ public class PoolManager : GenericManager<PoolManager>, ILoadedManager
     }
 
     public void PostInitialize() { }
+
+    public void ResetPools()
+    {
+        TRexPool.ResetPool();
+        AsteroidPool.ResetPool();
+        QuicksandPool.ResetPool();
+        PickupPool.ResetPool();
+        ManaCollectiblePool.ResetPool();
+        CoinCollectiblePool.ResetPool();
+        AsteroidImpactCircleParticlePool.ResetPool();
+        AsteroidImpactParticlePool.ResetPool();
+    }
 }
