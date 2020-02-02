@@ -56,7 +56,9 @@ MonoBehaviour:
   BootsCost: 20
   WrenchCost: 15
   ShieldCost: 80
+  Cost: 0
   InitializeOnAwake: 0
+  CanvasRotationSpeed: 180
 --- !u!54 &7272422690432543443
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -72,7 +74,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &3427167459647985483
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +117,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3974741634721536827
 GameObject:
@@ -446,7 +448,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1997798589562941390
 PrefabInstance:
