@@ -29,6 +29,8 @@ public class FixerController : MonoBehaviour
     public float QuicksandMultiplier = 0.5f;
     private bool _inQuicksand;
 
+    public Animator Animator;
+
     // Props
     public float MovementSpeed
     {
@@ -50,6 +52,8 @@ public class FixerController : MonoBehaviour
         }
     }
 
+    private bool _oldRunState;
+
     void Awake()
     {
 
@@ -61,6 +65,12 @@ public class FixerController : MonoBehaviour
         if (CanMove)
         {
             State = _inputDirection.magnitude > 0f ? PlayerState.Moving : PlayerState.Idle;
+
+            if (_oldRunState != CanMove)
+            {
+                Animator.SetTrigger(State == PlayerState.Moving ? "StartRun" : "Idle");
+            }
+            _oldRunState = CanMove;
         }
 
         // Get Input
@@ -166,11 +176,13 @@ public class FixerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Animator.SetTrigger("StartRepair");
             State = PlayerState.Repairing;
             OnStartRepair();
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
+            Animator.SetTrigger("Idle");
             State = PlayerState.Idle;
             OnStopRepair();
         }
