@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 6065436555312810476}
   m_Layer: 8
   m_Name: DestructibleCar
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1102,9 +1102,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464e7c78886aa2048aeb712b5d90e991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepairDuration: 1
+  RepairBaseDuration: 2
   DestructiblePartRoot: {fileID: 1385971485994167204}
   Intact: 1
+  FixRewardCoins: 8
+  WrenchBoostSeconds: 0.5
+  MinimumRepairTime: 0.3
+  Repairable: 1
 --- !u!1 &6378329909113782093
 GameObject:
   m_ObjectHideFlags: 0

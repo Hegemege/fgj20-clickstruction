@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 5745193327442449625}
   m_Layer: 8
   m_Name: DestructibleStatue_Venus
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

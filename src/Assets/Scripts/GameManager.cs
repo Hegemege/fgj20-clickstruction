@@ -107,7 +107,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         if (scene.name == "main" && State != GameState.Match && State != GameState.VictoryScreen)
         {
             State = GameState.Match;
-            StartMatch();
+            StartCoroutine(StartMatch());
         }
 
         if (State == GameState.Match)
@@ -151,25 +151,24 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         }
 
         // Win/lose condition
-        var destroyedCount = 0;
-        var maxRepairables = 0;
-        foreach (var destructible in Destructibles)
-        {
-            if (destructible.Repairable)
-            {
-                maxRepairables += 1;
-                if (destructible.Intact == false)
-                {
-                    destroyedCount += 1;
-                }
-            }
-
-        }
-
         _victoryTimer += dt;
 
         if (_victoryTimer > 2f && State == GameState.Match)
         {
+            var destroyedCount = 0;
+            var maxRepairables = 0;
+            foreach (var destructible in Destructibles)
+            {
+                if (destructible.Repairable)
+                {
+                    maxRepairables += 1;
+                    if (destructible.Intact == false)
+                    {
+                        destroyedCount += 1;
+                    }
+                }
+            }
+
             if (destroyedCount == 0)
             {
                 EndMatch(Victory.Fixer);
@@ -181,12 +180,29 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         }
     }
 
-    public void StartMatch()
+    public IEnumerator StartMatch()
     {
+        yield return new WaitForSeconds(0.5f);
         Mana = 10f;
         Coins = 0f;
 
+        _victoryTimer = 0f;
+
         UIController.RefreshBars();
+
+        // Get all destructibles
+        Destructibles.Clear();
+        var all = GameObject.FindGameObjectsWithTag("Destructible");
+        Debug.Log(all.Length);
+        foreach (var dest in all)
+        {
+            var component = dest.GetComponent<Destructible>();
+            if (component.Repairable)
+            {
+                Destructibles.Add(component);
+            }
+            component.Intact = true;
+        }
 
         // Destroy half of destructibles
         var destroy = false;
@@ -197,7 +213,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             destroy = !destroy;
             if (destroy)
             {
-                destructible.Destruct(false, false);
+                destructible.Destruct(false, false, true);
             }
         }
 
@@ -207,6 +223,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
     public void EndMatch(Victory ending)
     {
+        Debug.Log("EndMatch" + ending);
         State = GameState.VictoryScreen;
         EndCanvas.gameObject.SetActive(true);
 

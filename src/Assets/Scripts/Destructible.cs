@@ -45,7 +45,7 @@ public class Destructible : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.Destructibles.Add(this);
+        //GameManager.Instance.Destructibles.Add(this);
     }
 
     void Update()
@@ -58,9 +58,9 @@ public class Destructible : MonoBehaviour
 #endif
     }
 
-    public void Destruct(bool spawnMana = true, bool playSound = true)
+    public void Destruct(bool spawnMana = true, bool playSound = true, bool force = false)
     {
-        if (!Intact) return;
+        if (!Intact && !force) return;
 
         Intact = false;
 

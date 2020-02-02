@@ -11,6 +11,7 @@ TagManager:
   - ManaCollectible
   - Pickup
   - Quicksand
+  - Destructible
   layers:
   - Default
   - TransparentFX
