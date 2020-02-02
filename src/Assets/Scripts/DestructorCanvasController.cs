@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityUtilities;
 
 public class DestructorCanvasController : MonoBehaviour
 {
@@ -24,12 +25,17 @@ public class DestructorCanvasController : MonoBehaviour
         _destructorController = GetComponentInParent<DestructorController>();
     }
 
+    void Start()
+    {
+        ResetButtonColors();
+    }
+
     void Update()
     {
-        TRexButton.enabled = GameManager.Instance.Mana >= GameManager.Instance.TRexManaCost;
-        AsteroidButton.enabled = GameManager.Instance.Mana >= GameManager.Instance.AsteroidManaCost;
-        QuicksandButton.enabled = GameManager.Instance.Mana >= GameManager.Instance.QuicksandManaCost;
-        ArmageddonButton.enabled = GameManager.Instance.Mana >= GameManager.Instance.ArmageddonManaCost;
+        TRexButton.interactable = GameManager.Instance.Mana >= GameManager.Instance.TRexManaCost;
+        AsteroidButton.interactable = GameManager.Instance.Mana >= GameManager.Instance.AsteroidManaCost;
+        QuicksandButton.interactable = GameManager.Instance.Mana >= GameManager.Instance.QuicksandManaCost;
+        ArmageddonButton.interactable = GameManager.Instance.Mana >= GameManager.Instance.ArmageddonManaCost;
     }
 
     public void OnClickTrex()
@@ -86,6 +92,11 @@ public class DestructorCanvasController : MonoBehaviour
         AsteroidButton.image.color = Color.white;
         QuicksandButton.image.color = Color.white;
         ArmageddonButton.image.color = Color.white;
+
+        TRexPrice.text = FloatStringCache.Get(GameManager.Instance.TRexManaCost, 0);
+        AsteroidPrice.text = FloatStringCache.Get(GameManager.Instance.AsteroidManaCost, 0);
+        QuicksandPrice.text = FloatStringCache.Get(GameManager.Instance.QuicksandManaCost, 0);
+        ArmageddonPrice.text = FloatStringCache.Get(GameManager.Instance.ArmageddonManaCost, 0);
     }
 
     public void UseAbility(DestructorAbility ability)
