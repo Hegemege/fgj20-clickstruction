@@ -164,7 +164,7 @@ public class FixerController : MonoBehaviour
         var inputY = Input.GetAxis("Vertical");
         _inputDirection = new Vector2(inputX, inputY);
 
-        if (_inputDirection.magnitude > 0f && State != PlayerState.Idle)
+        if (_inputDirection.magnitude > 0f && State == PlayerState.Idle)
         {
             State = PlayerState.Moving;
             Animator.SetTrigger("StartRun");
