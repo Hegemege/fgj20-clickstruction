@@ -45,6 +45,9 @@ public class DestructorController : MonoBehaviour
             case DestructorAbility.Asteroid:
                 SpawnAsteroid();
                 break;
+            case DestructorAbility.Quicksand:
+                SpawnQuicksand();
+                break;
         }
 
         CurrentAbility = DestructorAbility.None;
@@ -92,6 +95,19 @@ public class DestructorController : MonoBehaviour
             asteroidWrapper.component.Initialize();
 
             _canvasController.UseAbility(DestructorAbility.Asteroid);
+        }
+    }
+
+    private void SpawnQuicksand()
+    {
+        if (GetEnvironmentClick(out RaycastHit hit))
+        {
+            var quicksandWrapper = PoolManager.Instance.QuicksandPool.GetPooledObject();
+            quicksandWrapper.gameObject.transform.position = hit.point + Vector3.up * 0.25f;
+
+            quicksandWrapper.component.Initialize();
+
+            _canvasController.UseAbility(DestructorAbility.Quicksand);
         }
     }
 }

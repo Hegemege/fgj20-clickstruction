@@ -8,6 +8,8 @@ public class DestructorCanvasController : MonoBehaviour
     public Color ActiveAbilityColor;
     public Image TRexButton;
     public Image AsteroidButton;
+    public Image QuicksandButton;
+
     private DestructorController _destructorController;
 
     void Awake()
@@ -23,6 +25,11 @@ public class DestructorCanvasController : MonoBehaviour
     public void OnClickAsteroid()
     {
         SetActiveAbility(DestructorAbility.Asteroid, AsteroidButton);
+    }
+
+    public void OnClickQuicksand()
+    {
+        SetActiveAbility(DestructorAbility.Quicksand, QuicksandButton);
     }
 
     private void SetActiveAbility(DestructorAbility ability, Image buttonImage)
@@ -44,6 +51,7 @@ public class DestructorCanvasController : MonoBehaviour
         // Set color of all buttons to white
         TRexButton.color = Color.white;
         AsteroidButton.color = Color.white;
+        QuicksandButton.color = Color.white;
     }
 
     public void UseAbility(DestructorAbility ability)

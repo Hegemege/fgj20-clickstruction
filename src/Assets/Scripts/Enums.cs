@@ -24,6 +24,7 @@ public enum DestructorAbility
     None = 0,
     TRex = 1,
     Asteroid = 2,
+    Quicksand = 3,
 
 }
 

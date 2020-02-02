@@ -26,11 +26,18 @@ public class FixerController : MonoBehaviour
 
     public float BootsMultiplier = 0.25f;
 
+    public float QuicksandMultiplier = 0.5f;
+    private bool _inQuicksand;
+
     // Props
     public float MovementSpeed
     {
         get
         {
+            if (_inQuicksand)
+            {
+                return _baseMovementSpeed * QuicksandMultiplier;
+            }
             return _baseMovementSpeed * (1f + GameManager.Instance.CollectedBoots * BootsMultiplier);
         }
     }
@@ -97,6 +104,22 @@ public class FixerController : MonoBehaviour
         if (other.CompareTag("Pickup"))
         {
             PickupPowerup(other);
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Quicksand"))
+        {
+            _inQuicksand = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Quicksand"))
+        {
+            _inQuicksand = false;
         }
     }
 

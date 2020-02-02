@@ -11,6 +11,8 @@ public class PoolManager : GenericManager<PoolManager>, ILoadedManager
     public AsteroidPool AsteroidPool;
     [HideInInspector]
     public PickupPool PickupPool;
+    [HideInInspector]
+    public QuicksandPool QuicksandPool;
 
     public CollectiblePool ManaCollectiblePool;
     public CollectiblePool CoinCollectiblePool;
@@ -25,6 +27,7 @@ public class PoolManager : GenericManager<PoolManager>, ILoadedManager
         TRexPool = GetComponentInChildren<TRexPool>();
         AsteroidPool = GetComponentInChildren<AsteroidPool>();
         PickupPool = GetComponentInChildren<PickupPool>();
+        QuicksandPool = GetComponentInChildren<QuicksandPool>();
     }
 
     public void PostInitialize() { }
