@@ -52,6 +52,8 @@ public class AsteroidController : MonoBehaviour, IResetableBehaviour
         _rigidBody.AddForce(_direction.normalized * MovementSpeed, ForceMode.Impulse);
 
         _exploded = false;
+
+        PoolManager.Instance.AsteroidSpawnAudio.GetPooledObject();
     }
 
     public void Reset()
@@ -83,6 +85,8 @@ public class AsteroidController : MonoBehaviour, IResetableBehaviour
         }
 
         SpawnImpactEffects();
+
+        PoolManager.Instance.AsteroidImpactAudio.GetPooledObject();
 
         StartCoroutine(DelayedReset());
     }

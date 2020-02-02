@@ -52,6 +52,7 @@ MonoBehaviour:
   FixRewardCoins: 8
   WrenchBoostSeconds: 0.5
   MinimumRepairTime: 0.3
+  Repairable: 1
 --- !u!1 &487777978447466208
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +66,7 @@ GameObject:
   - component: {fileID: 1994610066699807952}
   - component: {fileID: 1459637827844418744}
   - component: {fileID: 8282919768720967138}
+  - component: {fileID: 2719704491091903464}
   m_Layer: 8
   m_Name: Statue_protect
   m_TagString: Untagged
@@ -163,6 +165,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2719704491091903464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487777978447466208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &2160729352959464856
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +193,7 @@ GameObject:
   - component: {fileID: 7347577060272324122}
   - component: {fileID: 4342931329937630194}
   - component: {fileID: 6386402113143092204}
+  - component: {fileID: 2645234897305349280}
   m_Layer: 8
   m_Name: Statue_protect_3
   m_TagString: Untagged
@@ -274,6 +292,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2645234897305349280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160729352959464856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &2432748677334635701
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +320,7 @@ GameObject:
   - component: {fileID: 2408953092859545379}
   - component: {fileID: 7093256285320371501}
   - component: {fileID: 3826055293180695722}
+  - component: {fileID: 373615682132419016}
   m_Layer: 8
   m_Name: Statue_protect_5
   m_TagString: Untagged
@@ -385,6 +419,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &373615682132419016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432748677334635701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &4072597877625124612
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +447,7 @@ GameObject:
   - component: {fileID: 189745627251980456}
   - component: {fileID: 4029063341305407935}
   - component: {fileID: 4902277883345667452}
+  - component: {fileID: 141063045527492356}
   m_Layer: 8
   m_Name: Statue_protect_2
   m_TagString: Untagged
@@ -496,6 +546,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &141063045527492356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072597877625124612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &4246088551416831311
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +574,7 @@ GameObject:
   - component: {fileID: 1330207037284627381}
   - component: {fileID: 8206000346171347058}
   - component: {fileID: 2171944757009803221}
+  - component: {fileID: 7256578209988128128}
   m_Layer: 8
   m_Name: Statue_protect_4
   m_TagString: Untagged
@@ -607,6 +673,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7256578209988128128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246088551416831311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &5883291578912780950
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +809,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8294314624571068354
 GameObject:
@@ -743,6 +824,7 @@ GameObject:
   - component: {fileID: 8294314624571068352}
   - component: {fileID: 3873761322327492124}
   - component: {fileID: 2932790064646598775}
+  - component: {fileID: 7693967036887553627}
   m_Layer: 8
   m_Name: Stand_half_3
   m_TagString: Untagged
@@ -843,6 +925,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7693967036887553627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294314624571068354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &8294314624653502760
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +953,7 @@ GameObject:
   - component: {fileID: 8294314624653502766}
   - component: {fileID: 870035671488432003}
   - component: {fileID: 24553498861714747}
+  - component: {fileID: 2093154431209878927}
   m_Layer: 8
   m_Name: Stand_half
   m_TagString: Untagged
@@ -957,6 +1055,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2093154431209878927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294314624653502760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &8294314625422745003
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +1083,7 @@ GameObject:
   - component: {fileID: 8294314625422745001}
   - component: {fileID: 5980915534476155943}
   - component: {fileID: 4213182660818774526}
+  - component: {fileID: 4862776555035293064}
   m_Layer: 8
   m_Name: Stand_half_4
   m_TagString: Untagged
@@ -1070,6 +1184,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4862776555035293064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294314625422745003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &8294314625721542585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1212,7 @@ GameObject:
   - component: {fileID: 8294314625721542591}
   - component: {fileID: 7659078763984634331}
   - component: {fileID: 6034342840336312702}
+  - component: {fileID: 3135470819580507778}
   m_Layer: 8
   m_Name: Stand_half_2
   m_TagString: Untagged
@@ -1183,6 +1313,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3135470819580507778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294314625721542585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &8755070120138273987
 GameObject:
   m_ObjectHideFlags: 0

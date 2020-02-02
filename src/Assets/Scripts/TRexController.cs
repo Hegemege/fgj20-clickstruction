@@ -34,6 +34,9 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
         transform.position = -_direction * SpawnDistanceFromOrigin;
 
         _swervingTimer = 0f;
+
+        // Sound
+        PoolManager.Instance.DinoSpawnAudio.GetPooledObject();
     }
 
     public void Reset()
@@ -78,11 +81,13 @@ public class TRexController : MonoBehaviour, IResetableBehaviour
 
     public void StompLeft()
     {
+        PoolManager.Instance.DinoStompAudio.GetPooledObject();
         StompParticleLeft.Play();
     }
 
     public void StompRight()
     {
+        PoolManager.Instance.DinoStompAudio.GetPooledObject();
         StompParticleRight.Play();
     }
 }
