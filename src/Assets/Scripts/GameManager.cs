@@ -26,7 +26,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     public float Coins = 0f;
 
     public float CoinPickupWorth = 1f;
-    public float ManaPickupWorth = 1f;
+    public float ManaPickupWorth = 5f;
 
     public float ManaRegenRate = 1f;
 
@@ -152,8 +152,14 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
         // Win/lose condition
         var destroyedCount = 0;
+        var maxRepairables = 0;
         foreach (var destructible in Destructibles)
         {
+            if (destructible.Repairable)
+            {
+                maxRepairables += 1;
+            }
+
             if (destructible.Intact == false)
             {
                 destroyedCount += 1;
@@ -168,7 +174,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
             {
                 EndMatch(Victory.Fixer);
             }
-            else if (destroyedCount == Destructibles.Count)
+            else if (destroyedCount == maxRepairables)
             {
                 EndMatch(Victory.Destructor);
             }
@@ -186,6 +192,8 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         var destroy = false;
         foreach (var destructible in Destructibles)
         {
+            if (destructible.Repairable == false) continue;
+
             destroy = !destroy;
             if (destroy)
             {
