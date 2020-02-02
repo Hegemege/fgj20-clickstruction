@@ -50,8 +50,13 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     public EndCanvasController EndCanvas;
     public Victory WinningPlayer;
 
+    public List<Destructible> Destructibles;
+
+    private float _victoryTimer;
+
     void Awake()
     {
+        Destructibles = new List<Destructible>();
         Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
 
         _trailCanvasScaler = CursorTrailCanvas.GetComponent<CanvasScaler>();
@@ -135,6 +140,30 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         {
             Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
         }
+
+        // Win/lose condition
+        var destroyedCount = 0;
+        foreach (var destructible in Destructibles)
+        {
+            if (destructible.Intact == false)
+            {
+                destroyedCount += 1;
+            }
+        }
+
+        _victoryTimer += dt;
+
+        if (_victoryTimer > 2f)
+        {
+            if (destroyedCount == 0)
+            {
+                EndMatch(Victory.Fixer);
+            }
+            else if (destroyedCount == Destructibles.Count)
+            {
+                EndMatch(Victory.Destructor);
+            }
+        }
     }
 
     public void StartMatch()
@@ -144,6 +173,17 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
         UIController.RefreshBars();
 
+        // Destroy half of destructibles
+        var destroy = true;
+        foreach (var destructible in Destructibles)
+        {
+            destroy = !destroy;
+            if (destroy)
+            {
+                destructible.Destruct(false);
+            }
+        }
+
         CollectedBoots = 0;
         CollectedWrenches = 0;
     }
@@ -152,6 +192,8 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     {
         State = GameState.VictoryScreen;
         EndCanvas.gameObject.SetActive(true);
+
+        Destructibles.Clear();
 
         WinningPlayer = ending;
         if (WinningPlayer == Victory.Fixer)
