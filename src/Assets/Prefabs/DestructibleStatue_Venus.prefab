@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1540132963102430148}
   - component: {fileID: 6389615212716780302}
   - component: {fileID: 5773730206900716312}
+  - component: {fileID: 3208209863313650555}
   m_Layer: 8
   m_Name: Stand_3
   m_TagString: Untagged
@@ -113,6 +114,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3208209863313650555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057607384783747008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &1871576842094733569
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +142,7 @@ GameObject:
   - component: {fileID: 7641140895714712281}
   - component: {fileID: 9023182785969282337}
   - component: {fileID: 6612415889038930289}
+  - component: {fileID: 1291762547705478758}
   m_Layer: 8
   m_Name: Statue_birth_venus_1
   m_TagString: Untagged
@@ -224,6 +241,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.004307007, y: 0.007171838, z: 0.0034885276}
   m_Center: {x: -0.000037007965, y: -0.00033761963, z: 0.00019593534}
+--- !u!114 &1291762547705478758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871576842094733569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &2204244054202449892
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +377,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3866655810165283451
 GameObject:
@@ -360,6 +392,7 @@ GameObject:
   - component: {fileID: 4636170704274874845}
   - component: {fileID: 3932961356496243490}
   - component: {fileID: 7087074278663743042}
+  - component: {fileID: 7812084389382394497}
   m_Layer: 8
   m_Name: Statue_birth_venus_2
   m_TagString: Untagged
@@ -458,6 +491,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.006504541, y: 0.006441267, z: 0.0072081396}
   m_Center: {x: 0.00029826793, y: -0.00014307906, z: 0.00019180248}
+--- !u!114 &7812084389382394497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3866655810165283451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &3941471214091778481
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +557,7 @@ GameObject:
   - component: {fileID: 6367545774182127361}
   - component: {fileID: 712741035468830200}
   - component: {fileID: 9020665558267186985}
+  - component: {fileID: 1760843506320712405}
   m_Layer: 8
   m_Name: Statue_birth_venus_5
   m_TagString: Untagged
@@ -607,6 +656,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0049087796, y: 0.0071943062, z: 0.003960785}
   m_Center: {x: -0.000008088304, y: -0.00039181946, z: 0.00024214582}
+--- !u!114 &1760843506320712405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3995044825823097601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &5527484786356945367
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +684,7 @@ GameObject:
   - component: {fileID: 8610639895164692722}
   - component: {fileID: 9220026051283393823}
   - component: {fileID: 3906541851000970991}
+  - component: {fileID: 6020248834740431922}
   m_Layer: 8
   m_Name: Statue_birth_venus_3
   m_TagString: Untagged
@@ -718,6 +783,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.013640609, y: 0.012873648, z: 0.012788773}
   m_Center: {x: 0.000016981736, y: -0.0000075090197, z: -0.000026833495}
+--- !u!114 &6020248834740431922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527484786356945367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &5595533430422040237
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +850,7 @@ MonoBehaviour:
   FixRewardCoins: 8
   WrenchBoostSeconds: 0.5
   MinimumRepairTime: 0.3
+  Repairable: 1
 --- !u!1 &7117864109183196531
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +864,7 @@ GameObject:
   - component: {fileID: 2210466998608680686}
   - component: {fileID: 9138301485277732584}
   - component: {fileID: 4056015667250550338}
+  - component: {fileID: 1924709753113739167}
   m_Layer: 8
   m_Name: Statue_birth_venus_4
   m_TagString: Untagged
@@ -881,6 +963,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01743755, y: 0.012456996, z: 0.020519095}
   m_Center: {x: -0.00095085264, y: -0.000046286958, z: -0.0008260397}
+--- !u!114 &1924709753113739167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117864109183196531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &7244685333000188868
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +991,7 @@ GameObject:
   - component: {fileID: 3387030945370115982}
   - component: {fileID: 369696858716926505}
   - component: {fileID: 5784609505358598751}
+  - component: {fileID: 817890454148742007}
   m_Layer: 8
   m_Name: Stand
   m_TagString: Untagged
@@ -995,6 +1093,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &817890454148742007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7244685333000188868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &8197512411927903568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1121,7 @@ GameObject:
   - component: {fileID: 8963171466685883649}
   - component: {fileID: 6061871617020009684}
   - component: {fileID: 1119279331747741638}
+  - component: {fileID: 7224019250736971380}
   m_Layer: 8
   m_Name: Stand_2
   m_TagString: Untagged
@@ -1108,3 +1222,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7224019250736971380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197512411927903568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1

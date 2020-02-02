@@ -73,6 +73,15 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
 
     public void Update()
     {
+        // Reset main button
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftControl))
+        {
+            PoolManager.Instance.ResetPools();
+            GameManager.Instance.State = GameState.Loading;
+            SceneManager.LoadScene("main");
+            return;
+        }
+
         // TEMP
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.C))
@@ -174,13 +183,13 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         UIController.RefreshBars();
 
         // Destroy half of destructibles
-        var destroy = true;
+        var destroy = false;
         foreach (var destructible in Destructibles)
         {
             destroy = !destroy;
             if (destroy)
             {
-                destructible.Destruct(false);
+                destructible.Destruct(false, false);
             }
         }
 
