@@ -6,7 +6,52 @@ ModelImporter:
   - first:
       74: 8331329129555455552
     second: Player_2_Armature|Run_player
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black_clothes
+    second: {fileID: 2100000, guid: 932afa7bd8000344a8d3faface4d8873, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: a9fb26d2ef8723948ac02276235adf1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 07ba67ad49d70bd4092732d3a3b520e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose
+    second: {fileID: 2100000, guid: b312dc38ffa74604a8f5a560853efd43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants
+    second: {fileID: 2100000, guid: 244958c046350f54283f5d012532cde3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red
+    second: {fileID: 2100000, guid: dc18f3ae258b37e4ba793c8f3b952a1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: a5176b921e2a7244c838011a4666f8d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wrench
+    second: {fileID: 2100000, guid: fc6926a84ce66f343b708bcf26e31b00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow
+    second: {fileID: 2100000, guid: b358c9a8c36e7a84baf5810fed46203e, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
