@@ -1215,6 +1215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464e7c78886aa2048aeb712b5d90e991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepairDuration: 1
+  RepairBaseDuration: 2
   DestructiblePartRoot: {fileID: 73961690935797961}
   Intact: 1
+  FixRewardCoins: 8
+  WrenchBoostSeconds: 0.5
+  MinimumRepairTime: 0.3
+  Repairable: 0

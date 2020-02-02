@@ -60,5 +60,16 @@ public class PoolManager : GenericManager<PoolManager>, ILoadedManager
         CoinCollectiblePool.ResetPool();
         AsteroidImpactCircleParticlePool.ResetPool();
         AsteroidImpactParticlePool.ResetPool();
+
+        AsteroidSpawnAudio.ResetPool();
+        AsteroidImpactAudio.ResetPool();
+        DestructionBigAudio.ResetPool();
+        DestructionSmallAudio.ResetPool();
+        DinoSpawnAudio.ResetPool();
+        DinoStompAudio.ResetPool();
+        ManaCollectAudio.ResetPool();
+        CoinPickupAudio.ResetPool();
+        PowerupPickupAudio.ResetPool();
+        RepairAudio.ResetPool();
     }
 }

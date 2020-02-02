@@ -20,6 +20,8 @@ public class Destructible : MonoBehaviour
     public float WrenchBoostSeconds = 0.5f;
     public float MinimumRepairTime = 0.3f;
 
+    public bool Repairable = true;
+
     public float RepairLength
     {
         get
@@ -53,11 +55,23 @@ public class Destructible : MonoBehaviour
 #endif
     }
 
-    public void Destruct(bool spawnMana = true)
+    public void Destruct(bool spawnMana = true, bool playSound = true)
     {
         if (!Intact) return;
 
         Intact = false;
+
+        if (playSound)
+        {
+            if (Repairable)
+            {
+                PoolManager.Instance.DestructionBigAudio.GetPooledObject();
+            }
+            else
+            {
+                PoolManager.Instance.DestructionSmallAudio.GetPooledObject();
+            }
+        }
 
         // Release all rigidbodies and apply a small explosion on all of them
         foreach (var part in DestructibleParts)

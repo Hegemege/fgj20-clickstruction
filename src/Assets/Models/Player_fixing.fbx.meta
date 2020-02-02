@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 56d35af95b553814ab05a79ba84ba7b0
+guid: 6c81f57d44d1ac94e888fbe50ee2614d
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 6792760616821141956
-    second: Player_Armature|Fix
+      74: -2221494433583122629
+    second: Player_2_Armature|Fix
   - first:
-      74: -3789606136855594505
-    second: Player_Armature|Idle
+      74: -4904167944182787700
+    second: Player_2_Armature|Idle
   - first:
-      74: 6000711225875141259
-    second: Player_Armature|Run
+      74: 315295466857449570
+    second: Player_2_Armature|Run
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -32,7 +32,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -43,7 +43,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.4
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -89,10 +89,10 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.4
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1

@@ -129,6 +129,7 @@ public class FixerController : MonoBehaviour
         coin.Reset();
 
         GameManager.Instance.PickupCoin();
+        PoolManager.Instance.CoinPickupAudio.GetPooledObject();
     }
 
     private void PickupPowerup(Collider other)
@@ -148,7 +149,9 @@ public class FixerController : MonoBehaviour
                     break;
             }
             powerup.Reset();
+            PoolManager.Instance.PowerupPickupAudio.GetPooledObject();
         }
+
     }
 
     // Input System Events

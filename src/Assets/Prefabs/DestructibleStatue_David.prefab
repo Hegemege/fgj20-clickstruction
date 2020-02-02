@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4033348370848636019}
   - component: {fileID: 3631721559398603048}
   - component: {fileID: 989981561595533285}
+  - component: {fileID: 2389069461130107787}
   m_Layer: 8
   m_Name: Statue_david
   m_TagString: Untagged
@@ -111,6 +112,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2389069461130107787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516370615357492869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &552272080970540909
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +140,7 @@ GameObject:
   - component: {fileID: 5485803080306039591}
   - component: {fileID: 7350216748845393536}
   - component: {fileID: 3704023601923966710}
+  - component: {fileID: 3846463168769747789}
   m_Layer: 8
   m_Name: Stand
   m_TagString: Untagged
@@ -225,6 +242,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3846463168769747789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552272080970540909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &1360984830283180537
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +270,7 @@ GameObject:
   - component: {fileID: 2252871360643772840}
   - component: {fileID: 3963240769844152445}
   - component: {fileID: 7829544210535197551}
+  - component: {fileID: 2929191658649513334}
   m_Layer: 8
   m_Name: Stand_2
   m_TagString: Untagged
@@ -338,6 +371,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2929191658649513334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360984830283180537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &2021402432412466378
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +399,7 @@ GameObject:
   - component: {fileID: 4222876877873380047}
   - component: {fileID: 6797011950867021731}
   - component: {fileID: 850110520093840728}
+  - component: {fileID: 7833338060312646170}
   m_Layer: 8
   m_Name: Statue_david_4
   m_TagString: Untagged
@@ -449,6 +498,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7833338060312646170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021402432412466378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &2767901304580972674
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +526,7 @@ GameObject:
   - component: {fileID: 5521366027241875025}
   - component: {fileID: 3480468959940660908}
   - component: {fileID: 5523382983895740481}
+  - component: {fileID: 1166863513218547037}
   m_Layer: 8
   m_Name: Statue_david_1
   m_TagString: Untagged
@@ -560,6 +625,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1166863513218547037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2767901304580972674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &3352664283183380996
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +692,7 @@ MonoBehaviour:
   FixRewardCoins: 8
   WrenchBoostSeconds: 0.5
   MinimumRepairTime: 0.3
+  Repairable: 1
 --- !u!1 &4123602822518736409
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +706,7 @@ GameObject:
   - component: {fileID: 8931107979889041916}
   - component: {fileID: 8755008372473079151}
   - component: {fileID: 922903015615612612}
+  - component: {fileID: 3361377238272489941}
   m_Layer: 8
   m_Name: Statue_david_3
   m_TagString: Untagged
@@ -723,6 +805,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3361377238272489941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123602822518736409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &5637985225710064057
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +862,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6166185773544910104
 GameObject:
@@ -818,6 +915,7 @@ GameObject:
   - component: {fileID: 2534218518162406859}
   - component: {fileID: 1297011236191381605}
   - component: {fileID: 666932078416730784}
+  - component: {fileID: 5335285681059695686}
   m_Layer: 8
   m_Name: Statue_david_2
   m_TagString: Untagged
@@ -916,6 +1014,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5335285681059695686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7359147504116797657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &7894029721471902569
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +1042,7 @@ GameObject:
   - component: {fileID: 8538821183447959405}
   - component: {fileID: 4290843352657723303}
   - component: {fileID: 3674993840926398385}
+  - component: {fileID: 8792877684016247076}
   m_Layer: 8
   m_Name: Stand_3
   m_TagString: Untagged
@@ -1029,6 +1143,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8792877684016247076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894029721471902569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d221944eb3d794843819373917c16fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Attached: 1
 --- !u!1 &9058803926121900877
 GameObject:
   m_ObjectHideFlags: 0
