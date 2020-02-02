@@ -22,20 +22,20 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
     public float CoinMax = 100f;
 
 
-    public float Mana = 10f;
+    public float Mana = 13f;
     public float Coins = 0f;
 
     public float CoinPickupWorth = 1f;
-    public float ManaPickupWorth = 5f;
+    public float ManaPickupWorth = 6f;
 
     public float ManaRegenRate = 1f;
 
     public int CollectedBoots;
     public int CollectedWrenches;
 
-    public float AsteroidManaCost = 10f;
-    public float TRexManaCost = 40f;
-    public float QuicksandManaCost = 15f;
+    public float AsteroidManaCost = 14f;
+    public float TRexManaCost = 30f;
+    public float QuicksandManaCost = 10f;
     public float ArmageddonManaCost = 90f;
 
 
@@ -196,7 +196,7 @@ public class GameManager : GenericManager<GameManager>, ILoadedManager
         }
 
         // Mana regen update
-        ManaRegenRate += dt * 0.02f;
+        ManaRegenRate += dt * 0.015f;
     }
 
     public IEnumerator StartMatch()

@@ -2130,21 +2130,6 @@ PrefabInstance:
       propertyPath: UIController
       value: 
       objectReference: {fileID: 304294777}
-    - target: {fileID: 7264505993343690635, guid: 8f03ebde679052a4e83781a990491412,
-        type: 3}
-      propertyPath: ManaPickupWorth
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7264505993343690635, guid: 8f03ebde679052a4e83781a990491412,
-        type: 3}
-      propertyPath: ManaRegenRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7264505993343690635, guid: 8f03ebde679052a4e83781a990491412,
-        type: 3}
-      propertyPath: TRexManaCost
-      value: 35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f03ebde679052a4e83781a990491412, type: 3}
 --- !u!1001 &3742817053158097560
