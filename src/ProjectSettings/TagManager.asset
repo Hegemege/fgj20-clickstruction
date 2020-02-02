@@ -9,6 +9,7 @@ TagManager:
   - StaticEnvironment
   - CoinCollectible
   - ManaCollectible
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - DestructorEnvironment
   - Particles
   - Collectible
-  - 
-  - 
+  - Pickup
+  - PickupWorld
   - 
   - 
   - 

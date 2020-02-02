@@ -26,3 +26,10 @@ public enum DestructorAbility
     Asteroid = 2,
 
 }
+
+public enum PickupType
+{
+    Boots = 0,
+    Wrench = 1,
+    Shield = 2,
+}
