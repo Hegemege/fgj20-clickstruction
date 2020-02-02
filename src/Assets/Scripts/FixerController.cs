@@ -24,12 +24,21 @@ public class FixerController : MonoBehaviour
     private Quaternion _targetModelRotation;
     public float RotationSmoothing;
 
+    public float BootsMultiplier = 0.25f;
+
+    public float QuicksandMultiplier = 0.5f;
+    private bool _inQuicksand;
+
     // Props
     public float MovementSpeed
     {
         get
         {
-            return _baseMovementSpeed;
+            if (_inQuicksand)
+            {
+                return _baseMovementSpeed * QuicksandMultiplier;
+            }
+            return _baseMovementSpeed * (1f + GameManager.Instance.CollectedBoots * BootsMultiplier);
         }
     }
 
@@ -90,6 +99,28 @@ public class FixerController : MonoBehaviour
         {
             PickupCoin(other);
         }
+
+        // Powerups
+        if (other.CompareTag("Pickup"))
+        {
+            PickupPowerup(other);
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Quicksand"))
+        {
+            _inQuicksand = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Quicksand"))
+        {
+            _inQuicksand = false;
+        }
     }
 
     private void PickupCoin(Collider other)
@@ -98,6 +129,26 @@ public class FixerController : MonoBehaviour
         coin.Reset();
 
         GameManager.Instance.PickupCoin();
+    }
+
+    private void PickupPowerup(Collider other)
+    {
+        var powerup = other.GetComponentInParent<PickupController>();
+        if (GameManager.Instance.SpendCoins(powerup.Cost))
+        {
+            switch (powerup.Type)
+            {
+                case PickupType.Boots:
+                    GameManager.Instance.CollectedBoots += 1;
+                    break;
+                case PickupType.Wrench:
+                    GameManager.Instance.CollectedWrenches += 1;
+                    break;
+                case PickupType.Shield:
+                    break;
+            }
+            powerup.Reset();
+        }
     }
 
     // Input System Events

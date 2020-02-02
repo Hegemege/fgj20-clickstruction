@@ -24,5 +24,14 @@ public enum DestructorAbility
     None = 0,
     TRex = 1,
     Asteroid = 2,
+    Quicksand = 3,
+    Armageddon = 4,
 
+}
+
+public enum PickupType
+{
+    Boots = 0,
+    Wrench = 1,
+    Shield = 2,
 }

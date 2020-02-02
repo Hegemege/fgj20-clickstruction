@@ -9,6 +9,8 @@ TagManager:
   - StaticEnvironment
   - CoinCollectible
   - ManaCollectible
+  - Pickup
+  - Quicksand
   layers:
   - Default
   - TransparentFX
@@ -26,9 +28,9 @@ TagManager:
   - DestructorEnvironment
   - Particles
   - Collectible
-  - 
-  - 
-  - 
+  - Pickup
+  - PickupWorld
+  - Quicksand
   - 
   - 
   - 

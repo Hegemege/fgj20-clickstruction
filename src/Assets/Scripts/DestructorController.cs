@@ -12,6 +12,9 @@ public class DestructorController : MonoBehaviour
     private EventSystem _eventSystem;
     private DestructorCanvasController _canvasController;
 
+    public int AsteroidsInArmageddon = 12;
+    public float ArmageddonInterval = 0.6f;
+
     void Awake()
     {
         _eventSystem = GetComponentInChildren<EventSystem>();
@@ -44,6 +47,12 @@ public class DestructorController : MonoBehaviour
                 break;
             case DestructorAbility.Asteroid:
                 SpawnAsteroid();
+                break;
+            case DestructorAbility.Quicksand:
+                SpawnQuicksand();
+                break;
+            case DestructorAbility.Armageddon:
+                SpawnArmageddon();
                 break;
         }
 
@@ -93,5 +102,44 @@ public class DestructorController : MonoBehaviour
 
             _canvasController.UseAbility(DestructorAbility.Asteroid);
         }
+    }
+
+    private void SpawnQuicksand()
+    {
+        if (GetEnvironmentClick(out RaycastHit hit))
+        {
+            var quicksandWrapper = PoolManager.Instance.QuicksandPool.GetPooledObject();
+            quicksandWrapper.gameObject.transform.position = hit.point + Vector3.up * 0.25f;
+
+            quicksandWrapper.component.Initialize();
+
+            _canvasController.UseAbility(DestructorAbility.Quicksand);
+        }
+    }
+
+    private void SpawnArmageddon()
+    {
+        if (GetEnvironmentClick(out RaycastHit hit))
+        {
+            StartCoroutine(Armageddon(hit));
+            _canvasController.UseAbility(DestructorAbility.Armageddon);
+        }
+    }
+
+    private IEnumerator Armageddon(RaycastHit hit)
+    {
+        for (var i = 0; i < AsteroidsInArmageddon; i++)
+        {
+            var asteroidWrapper = PoolManager.Instance.AsteroidPool.GetPooledObject();
+            asteroidWrapper.gameObject.transform.position = hit.point;
+
+            var randomness = Random.onUnitSphere;
+            randomness.y = 0f;
+            asteroidWrapper.component.TargetLocation = hit.point + randomness.normalized * Random.Range(2f, 15f);
+            asteroidWrapper.component.Initialize();
+
+            yield return new WaitForSeconds(ArmageddonInterval);
+        }
+
     }
 }

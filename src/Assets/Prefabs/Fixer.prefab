@@ -126,10 +126,12 @@ MonoBehaviour:
   RepairableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _baseMovementSpeed: 15
+  _baseMovementSpeed: 9
   State: 0
   ModelRoot: {fileID: 8730645685269912191}
   RotationSmoothing: 0.15
+  BootsMultiplier: 0.25
+  QuicksandMultiplier: 0.5
 --- !u!54 &3104289765560013216
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -328,7 +328,13 @@ MonoBehaviour:
   Coins: 0
   CoinPickupWorth: 1
   ManaPickupWorth: 1
-  ManaRegenRate: 0.5
+  ManaRegenRate: 1
+  CollectedBoots: 0
+  CollectedWrenches: 0
+  AsteroidCost: 10
+  TRexManaCost: 40
+  QuicksandCost: 15
+  ArmageddonCost: 90
   CursorImage: {fileID: 2800000, guid: b2d636938f49e5b499e3cac4776f0b8e, type: 3}
   CursorTrailCanvas: {fileID: 6844181631458322075}
   CursorTrail: {fileID: 7509733317187701112}

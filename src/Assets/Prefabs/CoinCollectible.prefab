@@ -85,7 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428958380470137536}
   - component: {fileID: 4132180167358813601}
-  m_Layer: 15
+  m_Layer: 17
   m_Name: Collider
   m_TagString: CoinCollectible
   m_Icon: {fileID: 0}
